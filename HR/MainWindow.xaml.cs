@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HRuwp.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,25 @@ namespace HR
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int IdJob { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            this.cb_Nation.DataContext = new List<Nationality>();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Job j = new Job()
+            {
+                Name = "gggg"
+
+            };
         }
     }
 }
