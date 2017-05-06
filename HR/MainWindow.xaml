@@ -11,9 +11,21 @@
         <Grid.DataContext>
             <Entities:Nationality/>
         </Grid.DataContext>
-        <ComboBox Name="cb_Nation" HorizontalAlignment="Left" Margin="211,159,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="200,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="200,93,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <ComboBox Name="cb_Nation" HorizontalAlignment="Left" Margin="359,149,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="359,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="359,108,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <ListView Background="#585858" Width="300" HorizontalAlignment="Left" >
+            <ListViewItem>
+                <Grid Margin="15,5">
+                    <Expander Grid.Row="1">
+                        <Expander.Header>
+                            <TextBlock Foreground="#FFABADB3" Text="MenuTitle" FontSize="20" Grid.Row="0"/>
+                        </Expander.Header>
+                        </Expander>
+                </Grid>
+                
+            </ListViewItem>
+        </ListView>
 
     </Grid>
 </Window>

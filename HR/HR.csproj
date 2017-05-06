@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialMenu, Version=0.0.4.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialMenu.0.0.4.5\lib\net452\MaterialMenu.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -63,10 +66,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddDepartement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddDepartement.xaml.cs">
+      <DependentUpon>AddDepartement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployee.xaml.cs">
+      <DependentUpon>AddEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -79,13 +100,23 @@
     <Compile Include="Entities\Loan.cs" />
     <Compile Include="Entities\Nationality.cs" />
     <Compile Include="Entities\Suspension.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managment\DepatementsServices.cs" />
+    <Compile Include="Managment\EmployeesServices.cs" />
+    <Compile Include="Managment\HolidaysServices.cs" />
+    <Compile Include="Managment\JobsServices.cs" />
+    <Compile Include="Managment\LeavesServices.cs" />
+    <Compile Include="Managment\LoanServices.cs" />
     <Compile Include="Managment\NationalitiesServices.cs" />
+    <Compile Include="Managment\SuspensionServices.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model_HR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
