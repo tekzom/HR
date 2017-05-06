@@ -1,11 +1,13 @@
-﻿<Window x:Class="HR.AddEmployee"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HR"
-        mc:Ignorable="d"
-        Title="AddEmployee" Height="720" Width="1280" FontSize="16">
+﻿<UserControl x:Class="HR.UC_AddEmpl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HR"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280"
+             Background="White"
+             >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="108*"/>
@@ -52,9 +54,10 @@
         <DatePicker Name="djoin" Grid.Column="4" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Width="278" Height="29"/>
         <ComboBox Name="cbdep"  Grid.Column="4" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
         <ComboBox Name="cbsup" Grid.Column="4" HorizontalAlignment="Left" Margin="10,407,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
-        <Expander Grid.Column="4" Header="Expander" HorizontalAlignment="Left" Height="187" Margin="76,480,0,0" VerticalAlignment="Top" Width="231" IsExpanded="True"/>
+        <Button Content="Save" Grid.Column="4" HorizontalAlignment="Left" Margin="174,460,0,0" VerticalAlignment="Top" Width="114" Click="BSave_Click"/>
+        <Button Content="Cancel" Grid.Column="4" HorizontalAlignment="Left" Margin="10,460,0,0" VerticalAlignment="Top" Width="121" Click="BCancel_Click"/>
 
 
 
     </Grid>
-</Window>
+</UserControl>

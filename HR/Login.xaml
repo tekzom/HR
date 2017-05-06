@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:HR"
         mc:Ignorable="d"
         Title="Login" Height="411.898" Width="472.853">
+    
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -15,5 +17,8 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="168,210,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
         <Label Content="Forget Password?" HorizontalAlignment="Left" Margin="168,249,0,0" VerticalAlignment="Top" FontSize="8" Width="76"/>
         <Label Content="hr" HorizontalAlignment="Left" Margin="200,105,0,0" VerticalAlignment="Top" FontFamily="Candles Regular" FontSize="36"/>
+
+
+
     </Grid>
 </Window>

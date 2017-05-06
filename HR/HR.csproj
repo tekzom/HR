@@ -66,6 +66,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UC_AddEmpl.xaml.cs">
+      <DependentUpon>UC_AddEmpl.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddDepartement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,6 +110,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_AddEmpl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managment\DepatementsServices.cs" />
@@ -117,6 +128,9 @@
     <Compile Include="Managment\LoanServices.cs" />
     <Compile Include="Managment\NationalitiesServices.cs" />
     <Compile Include="Managment\SuspensionServices.cs" />
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model_HR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -144,6 +158,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SideMenu\SideMenu.csproj">
+      <Project>{b24eb6c8-c06a-46e1-b4f0-570e5269a246}</Project>
+      <Name>SideMenu</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\favorite.png" />
+    <Resource Include="Assets\home.png" />
+    <Resource Include="Assets\list.png" />
+    <Resource Include="Assets\person.png" />
+    <Resource Include="Assets\reload.png" />
+    <Resource Include="Assets\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

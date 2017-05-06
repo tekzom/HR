@@ -1,0 +1,48 @@
+﻿<Window x:Class="HR.Menu"
+        xmlns:controls="clr-namespace:SideMenu.Controls;assembly=SideMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HR"
+        mc:Ignorable="d"
+        Title="Menu" Height="720" Width="1280">
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="1089*"/>
+        </Grid.ColumnDefinitions>
+        <controls:SideMenu Title="Demo Menu" Margin="0" HorizontalAlignment="Left" Width="180">
+            <controls:SideMenu.Items>
+                <controls:LabelMenuItem Text="MAIN"/>
+                <controls:ClickableMenuItem Text="DASHBOARD" Icon="Assets/Home.png" IsChecked="True" Click="ClickableMenuItem_Checked" />
+                <controls:ClickableMenuItem Text="SEARCH" Icon="Assets/search.png" Click="Modifie" />
+                <controls:SeparatorMenuItem />
+                <controls:LabelMenuItem Text="MORE"/>
+                <controls:ClickableMenuItem Text="USER" Icon="Assets/person.png" />
+                <controls:ClickableMenuItem Text="FAVORITES" Icon="Assets/favorite.png" />
+            </controls:SideMenu.Items>
+            <controls:SideMenu.BarItems>
+                <controls:SelectableBarButtonMenuItem Icon="Assets/list.png" />
+                <controls:BarButtonMenuItem Icon="Assets/reload.png" />
+            </controls:SideMenu.BarItems>
+        </controls:SideMenu>
+        <StackPanel Name="MainPanel" Grid.Column="1" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="1089"/>
+
+        <!--<StackPanel HorizontalAlignment="Left" Height="308" Margin="66,75,0,0" VerticalAlignment="Top" Width="100">
+            <Button Name="M1" Content="M1" Click="M1_Click" />
+            <StackPanel Name="s1"  Height="61">
+                <Button Content="M1Button1"/>
+                <Button Content="M1Button2"/>
+                <Button Content="M2Button3"/>
+            </StackPanel>
+            <Button Name="M2" Content="M2" Click="M2_Click" />
+            <StackPanel Name="s2" Height="100">
+                <Button Content="M2Button1"/>
+                <Button Content="M2Button2"/>
+                <Button Content="M2Button3"/>
+            </StackPanel>
+
+        </StackPanel>-->
+    </Grid>
+</Window>
