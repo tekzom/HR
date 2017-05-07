@@ -27,7 +27,11 @@
                 <controls:BarButtonMenuItem Icon="Assets/reload.png" />
             </controls:SideMenu.BarItems>
         </controls:SideMenu>
-        <StackPanel Name="MainPanel" Grid.Column="1" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="1089"/>
+        <StackPanel Name="MainPanel" Grid.Column="1" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="1089">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Assets/BackGround.png" TileMode="FlipX"/>
+            </StackPanel.Background>
+        </StackPanel>
 
         <!--<StackPanel HorizontalAlignment="Left" Height="308" Margin="66,75,0,0" VerticalAlignment="Top" Width="100">
             <Button Name="M1" Content="M1" Click="M1_Click" />

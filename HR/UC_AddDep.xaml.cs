@@ -1,5 +1,4 @@
-﻿using HRuwp.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,27 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HR
 {
     /// <summary>
-    /// Interaction logic for AddEmployee.xaml
+    /// Interaction logic for UC_AddDep.xaml
     /// </summary>
-    public partial class AddEmployee : Window
+    public partial class UC_AddDep : UserControl
     {
-        public AddEmployee()
+        public UC_AddDep()
         {
             InitializeComponent();
-            this.cbnat.DataContext = new List<Nationality>();
-            this.cbdep.DataContext = new List<Departement>();
         }
-        Employee E = new Employee()
-        {
-            
-
-        };
-
-
     }
 }

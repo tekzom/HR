@@ -10,18 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HRuwp.Entities;
+using HR.Managment;
 
 namespace HR
 {
     /// <summary>
-    /// Interaction logic for AddDepertement.xaml
+    /// Interaction logic for UC_CompanyStracture.xaml
     /// </summary>
-    public partial class AddDepertement : Window
+    public partial class UC_CompanyStracture : UserControl
     {
-        public AddDepertement()
+        public UC_CompanyStracture()
         {
             InitializeComponent();
+
         }
     }
 }
