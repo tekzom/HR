@@ -17,5 +17,9 @@ namespace HRuwp.Entities
         public string Contry { get; set; }
         public Departement ParentDepartment { get; set; }
 
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

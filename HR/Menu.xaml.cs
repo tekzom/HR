@@ -45,8 +45,9 @@ namespace HR
 
         private void ClickableMenuItem_Checked(object sender, RoutedEventArgs e)
         {
-            var w = new UC_AddEmpl();
-            w.IsUpdate = false;
+            MainPanel.Children.Clear();
+            var w = new UC_CompanyStracture();
+            //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
 

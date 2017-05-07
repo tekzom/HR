@@ -16,5 +16,10 @@ namespace HRuwp.Entities
         public DateTime Deadline { get; set; }
         public string Anount { get; set; }
         public string Statut { get; set; }
+
+        public override string ToString()
+        {
+            return this.Type;
+        }
     }
 }

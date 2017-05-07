@@ -26,5 +26,10 @@ namespace HRuwp.Entities
         public DateTime JoinDate { get; set; }
         public Departement Dep { get; set; }
         public Employee Supervisor { get; set; }
+
+        public override string ToString()
+        {
+            return this.FirstName + " " + this.LastName;
+        }
     }
 }

@@ -14,7 +14,12 @@ namespace HRuwp.Entities
         public DateTime DateD { get; set; }
         public DateTime DateF { get; set; }
         public string Type { get; set; }
-        //public string IdEmployee { get; set; }
+        public Employee Employee { get; set; }
         public bool Approve { get; set; }
+
+        public override string ToString()
+        {
+            return this.Type;
+        }
     }
 }

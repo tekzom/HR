@@ -13,6 +13,11 @@ namespace HRuwp.Entities
         public int Id { get; set; }
         public DateTime DateD { get; set; }
         public DateTime DateF { get; set; }
-        //public
+        public Employee Employee { get; set; }
+
+        public override string ToString()
+        {
+            return this.Id.ToString();
+        }
     }
 }

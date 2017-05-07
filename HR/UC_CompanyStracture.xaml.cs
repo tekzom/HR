@@ -22,10 +22,12 @@ namespace HR
     /// </summary>
     public partial class UC_CompanyStracture : UserControl
     {
+        List<Departement> LD = new List<Departement>();
         public UC_CompanyStracture()
         {
             InitializeComponent();
-
+            LD = new DepatementsServices().ListDepartements();
+            dgCompany.ItemsSource = LD;
         }
     }
 }
