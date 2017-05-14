@@ -7,15 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="1090">
     <Grid>
-        <Button Content="Add Department" HorizontalAlignment="Left" Margin="64,95,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid Name="dgCompany"  HorizontalAlignment="Left" Height="331" Margin="64,138,0,0" VerticalAlignment="Top" Width="799" AutoGenerateColumns="False" DataContext="{Binding}"> <!-- ItemsSource="{Binding LD}" --> 
+        <Button Content="Add new +" HorizontalAlignment="Left" Margin="64,95,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid Name="dgCompany"  HorizontalAlignment="Left" Height="331" Margin="64,138,0,0" VerticalAlignment="Top" Width="586" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False"> <!-- ItemsSource="{Binding LD}" --> 
         <DataGrid.Columns>
             <DataGridTextColumn Header="Departement Name" Binding="{Binding Name}"/>
             <DataGridTextColumn Header="Address" Binding="{Binding Adress}"/>
             <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
             <DataGridTextColumn Header="Contry" Binding="{Binding Contry}"/>
             <DataGridTextColumn Header="Parent Departement" Binding="{Binding ParentDepartment}"/>
-            
+                
+                <DataGridTemplateColumn Header="Update">
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate >
+                            
+                                <Button Name="bdel" Content="Update"/>
+                            
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate >
+                            
+                                <Button  Content="Delete"/>
+                            
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 

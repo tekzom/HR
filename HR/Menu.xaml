@@ -14,13 +14,17 @@
         </Grid.ColumnDefinitions>
         <controls:SideMenu Title="Demo Menu" Margin="0" HorizontalAlignment="Left" Width="180">
             <controls:SideMenu.Items>
-                <controls:LabelMenuItem Text="MAIN"/>
-                <controls:ClickableMenuItem Text="DASHBOARD" Icon="Assets/Home.png" IsChecked="True" Click="ClickableMenuItem_Checked" />
-                <controls:ClickableMenuItem Text="SEARCH" Icon="Assets/search.png" Click="Modifie" />
+                <controls:LabelMenuItem Text="Departemeny"/>
+                <controls:ClickableMenuItem Text="Company Stracture" Icon="Assets/Home.png" IsChecked="True" Click="ClickableMenuItem_Checked" />
+                <controls:ClickableMenuItem Text="Add Departement" Icon="Assets/search.png" Click="Modifie" />
                 <controls:SeparatorMenuItem />
-                <controls:LabelMenuItem Text="MORE"/>
-                <controls:ClickableMenuItem Text="USER" Icon="Assets/person.png" />
-                <controls:ClickableMenuItem Text="FAVORITES" Icon="Assets/favorite.png" />
+                <controls:LabelMenuItem Text="Employee"/>
+                <controls:ClickableMenuItem Text="Employees List" Icon="Assets/person.png" />
+                <controls:ClickableMenuItem Text="Add Employee" Icon="Assets/favorite.png" />
+                <controls:SeparatorMenuItem />
+                <controls:LabelMenuItem Text="Test"/>
+                <controls:ClickableMenuItem Text="Employees List" Icon="Assets/person.png" />
+                <controls:ClickableMenuItem Text="Add Employee" Icon="Assets/favorite.png" />
             </controls:SideMenu.Items>
             <controls:SideMenu.BarItems>
                 <controls:SelectableBarButtonMenuItem Icon="Assets/list.png" />
