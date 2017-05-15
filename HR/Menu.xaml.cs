@@ -63,5 +63,13 @@ namespace HR
             u.CurrentEmployee(Employee);
             MainPanel.Children.Add(u);
         }
+
+        private void ClickableMenuItem_Checked_1(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new TrainingSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w);
+        }
     }
 }

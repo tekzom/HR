@@ -19,7 +19,9 @@
                 <controls:ClickableMenuItem Text="Add Departement" Icon="Assets/search.png" Click="Modifie" />
                 <controls:SeparatorMenuItem />
                 <controls:LabelMenuItem Text="Employee"/>
-                <controls:ClickableMenuItem Text="Employees List" Icon="Assets/person.png" />
+                <controls:ClickableMenuItem Text="Employees List" Icon="Assets/person.png" Checked="ClickableMenuItem_Checked_1" >
+                    <Label Content="Label" Height="100" Width="100"/>
+                </controls:ClickableMenuItem>
                 <controls:ClickableMenuItem Text="Add Employee" Icon="Assets/favorite.png" />
                 <controls:SeparatorMenuItem />
                 <controls:LabelMenuItem Text="Test"/>
