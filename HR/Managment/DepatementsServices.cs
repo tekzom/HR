@@ -38,5 +38,12 @@ namespace HR.Managment
         {
             return db.Departements.ToList();
         }
+
+        public Departement FindExisting(int id)
+        {
+            Departement Origin = db.Departements.Find(id);
+            db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
+            return Origin;
+        }
     }
 }

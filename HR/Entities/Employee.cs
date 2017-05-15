@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,6 +27,9 @@ namespace HRuwp.Entities
         public DateTime JoinDate { get; set; }
         public Departement Dep { get; set; }
         public Employee Supervisor { get; set; }
+        public Status Stat { get; set; }
+        public PayGrade pay { get; set; }
+
 
         public override string ToString()
         {

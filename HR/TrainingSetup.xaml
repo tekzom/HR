@@ -7,10 +7,58 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="1090">
     <Grid>
-        <TabControl Name="CTabs" HorizontalAlignment="Left" Height="431" Margin="212,147,0,0" VerticalAlignment="Top" Width="722">
+        <TabControl Name="CTabs" HorizontalAlignment="Left" Height="533" Margin="212,147,0,0" VerticalAlignment="Top" Width="722">
+
             <TabItem Name="Fitem" Header="Courses">
-                <Grid Background="#FFE5E5E5">
-                    <Button Name="addC" Content="Add New +" HorizontalAlignment="Left" Margin="80,94,0,0" VerticalAlignment="Top" Width="75" Click="addC_Click"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="67*"/>
+                    </Grid.ColumnDefinitions>
+                    <ScrollViewer Name="Sgridcours" Visibility="Collapsed" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
+
+                        <Grid Background="#FFE5E5E5">
+                            <Button Name="addC" Content="Add New +" HorizontalAlignment="Left" Margin="80,94,0,0" VerticalAlignment="Top" Width="75" Click="addC_Click"/>
+                            <DataGrid HorizontalAlignment="Left" Height="181" Margin="80,122,0,0" VerticalAlignment="Top" Width="517"/>
+                        </Grid>
+                    </ScrollViewer>
+                    <ScrollViewer Name="Saddcours" Grid.ColumnSpan="2" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="18*"/>
+                                <ColumnDefinition Width="26*"/>
+                                <ColumnDefinition Width="95*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Content="Button" HorizontalAlignment="Left" Margin="184,428,0,0" VerticalAlignment="Top" Width="76" Height="23" Grid.Column="2"/>
+                            <Button Content="Button" HorizontalAlignment="Left" Margin="105,428,0,0" VerticalAlignment="Top" Width="74" Height="23" Grid.Column="2"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="11,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="249" Grid.Column="2"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="11,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="249" Grid.Column="2"/>
+                            <TextBox HorizontalAlignment="Left" Height="24" Margin="11,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="249" Grid.Column="2"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="11,349,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="249" Grid.Column="2"/>
+                            <ComboBox HorizontalAlignment="Left" Margin="11,108,0,0" VerticalAlignment="Top" Width="249" Height="24" Grid.Column="2"/>
+                            <RichTextBox HorizontalAlignment="Left" Height="62" Margin="11,194,0,0" VerticalAlignment="Top" Width="249" Grid.Column="2">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="RichTextBox"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                            <ComboBox HorizontalAlignment="Left" Margin="11,271,0,0" VerticalAlignment="Top" Width="249" Height="24" Grid.Column="2"/>
+                            <ComboBox HorizontalAlignment="Left" Margin="11,313,0,0" VerticalAlignment="Top" Width="249" Height="24" Grid.Column="2"/>
+                            <ComboBox HorizontalAlignment="Left" Margin="11,389,0,0" VerticalAlignment="Top" Width="249" Height="24" Grid.Column="2"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.487" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.193,0.244" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="38"/>
+                            <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+
+                        </Grid>
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem">

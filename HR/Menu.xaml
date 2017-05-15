@@ -15,7 +15,8 @@
         <controls:SideMenu Title="Demo Menu" Margin="0" HorizontalAlignment="Left" Width="180">
             <controls:SideMenu.Items>
                 <controls:LabelMenuItem Text="Departemeny"/>
-                <controls:ClickableMenuItem Text="Company Stracture" Icon="Assets/Home.png" IsChecked="True" Click="ClickableMenuItem_Checked" />
+                <controls:ClickableMenuItem Name="Company"  Text="Company Stracture" Icon="Assets/Home.png" IsChecked="True" Click="ClickableMenuItem_Checked" />
+
                 <controls:ClickableMenuItem Text="Add Departement" Icon="Assets/search.png" Click="Modifie" />
                 <controls:SeparatorMenuItem />
                 <controls:LabelMenuItem Text="Employee"/>

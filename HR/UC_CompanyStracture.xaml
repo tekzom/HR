@@ -7,40 +7,74 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="1090">
     <Grid>
-        <Button Content="Add new +" HorizontalAlignment="Left" Margin="64,95,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid Name="dgCompany"  HorizontalAlignment="Left" Height="331" Margin="64,138,0,0" VerticalAlignment="Top" Width="586" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False"> <!-- ItemsSource="{Binding LD}" --> 
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Departement Name" Binding="{Binding Name}"/>
-            <DataGridTextColumn Header="Address" Binding="{Binding Adress}"/>
-            <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
-            <DataGridTextColumn Header="Contry" Binding="{Binding Contry}"/>
-            <DataGridTextColumn Header="Parent Departement" Binding="{Binding ParentDepartment}"/>
-                
-                <DataGridTemplateColumn Header="Update">
-                    <DataGridTemplateColumn.CellTemplate>
+        <ScrollViewer Name="Scompany" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Visibility="Collapsed">
+            <Grid>
+                <Button Name="Badd" Content="Add new +" HorizontalAlignment="Left" Margin="206,134,0,0" VerticalAlignment="Top" Width="75" Click="Badd_Click"/>
+                <DataGrid Name="dgCompany"  HorizontalAlignment="Left" Height="331" Margin="206,205,0,0" VerticalAlignment="Top" Width="586" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                    <!-- ItemsSource="{Binding LD}" -->
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Departement Name" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Address" Binding="{Binding Adress}"/>
+                        <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                        <DataGridTextColumn Header="Contry" Binding="{Binding Contry}"/>
+                        <DataGridTextColumn Header="Parent Departement" Binding="{Binding ParentDepartment}"/>
 
-                        <DataTemplate >
-                            
-                                <Button Name="bdel" Content="Update"/>
-                            
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn Header="Update">
+                            <DataGridTemplateColumn.CellTemplate>
 
-                </DataGridTemplateColumn>
+                                <DataTemplate >
 
-                <DataGridTemplateColumn Header="Delete">
-                    <DataGridTemplateColumn.CellTemplate>
+                                    <Button Name="bdel" Content="Update"/>
 
-                        <DataTemplate >
-                            
-                                <Button  Content="Delete"/>
-                            
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
 
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+                        </DataGridTemplateColumn>
 
+                        <DataGridTemplateColumn Header="Delete">
+                            <DataGridTemplateColumn.CellTemplate>
+
+                                <DataTemplate >
+
+                                    <Button  Content="Delete"/>
+
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </ScrollViewer>
+
+        <ScrollViewer Name="Sadd" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+            <Grid Background="#7FFFFFFF" Margin="140,46,256,138">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="49*"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="124*"/>
+                    <ColumnDefinition Width="263*"/>
+                    <ColumnDefinition Width="497*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Name" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="52" Grid.Row="1"/>
+                <Label Content="Address" Grid.Column="1" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Height="31" Width="67" RenderTransformOrigin="0.537,0.968" Grid.Row="1"/>
+                <Label Content="Type" Grid.Column="1" HorizontalAlignment="Left" Margin="10,254,0,0" VerticalAlignment="Top" Height="31" Width="43" Grid.Row="1"/>
+                <Label Content="Contry" Grid.Column="1" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top" Height="31" Width="57" Grid.Row="1"/>
+                <Label Content="Parent Structure" Grid.Column="1" HorizontalAlignment="Left" Margin="10,366,0,0" VerticalAlignment="Top" Height="31" Width="123" Grid.Row="1"/>
+                <TextBox Name="tName" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,74,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" Background="#7FFFFFFF" Grid.Row="1"/>
+                <RichTextBox Name="tbAddress" Grid.Column="2" HorizontalAlignment="Left" Margin="10,143,0,0"  VerticalAlignment="Top" Height="89" Width="300" Grid.Row="1"/>
+                <ComboBox Name="cbType" Grid.Column="2" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="300" Height="27" Grid.Row="1"/>
+                <ComboBox Name="cbContry" Grid.Column="2" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" Width="300" Height="27" Grid.Row="1"/>
+                <ComboBox Name="cbParent"  Grid.Column="2" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top" Width="300" Height="27" Grid.Row="1"/>
+                <Button Name="bcancel" Content="Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="85,427,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.253,0.6" Height="25" Grid.Row="1" Click="bcancel_Click" />
+                <Button Name="bsave" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="185,427,0,0" VerticalAlignment="Top" Width="75" Height="25" Grid.Row="1" Click="bsave_Click" />
+            </Grid>
+        </ScrollViewer>
     </Grid>
+
+
+
 </UserControl>

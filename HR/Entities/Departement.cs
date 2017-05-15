@@ -14,7 +14,7 @@ namespace HRuwp.Entities
         public string Name { get; set; }
         public string Adress { get; set; }
         public string Type { get; set; }
-        public string Contry { get; set; }
+        public Nationality Contry { get; set; }
         public Departement ParentDepartment { get; set; }
 
         public override string ToString()

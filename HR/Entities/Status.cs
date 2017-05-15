@@ -5,23 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRuwp.Entities
+namespace HR.Entities
 {
-    public class Job
+    public class Status
     {
         [Key]
-        public int Code { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
-        public String Discription { get; set; }
-        public String Specification { get; set; }
+        public string Description { get; set; }
 
         public override string ToString()
         {
             return this.Name;
 
         }
-
     }
-
-    
 }

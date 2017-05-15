@@ -71,11 +71,10 @@
     <Compile Include="AddCourse.xaml.cs">
       <DependentUpon>AddCourse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\PayGrade.cs" />
+    <Compile Include="Entities\Status.cs" />
     <Compile Include="TrainingSetup.xaml.cs">
       <DependentUpon>TrainingSetup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UC_AddDep.xaml.cs">
-      <DependentUpon>UC_AddDep.xaml</DependentUpon>
     </Compile>
     <Compile Include="UC_AddEmpl.xaml.cs">
       <DependentUpon>UC_AddEmpl.xaml</DependentUpon>
@@ -125,10 +124,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TrainingSetup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UC_AddDep.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
