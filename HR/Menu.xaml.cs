@@ -49,6 +49,20 @@ namespace HR
             MainPanel.Children.Add(w);
         }
 
+        private void JobDetailsSetup_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new JobDetailsSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w); 
+        }
 
+        private void ClickableMenuItem_Checked_2(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new JobDetailsSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w);
+        }
     }
 }

@@ -11,7 +11,7 @@
             <Grid>
                 <Button Name="Badd" Content="Add new +" HorizontalAlignment="Left" Margin="206,134,0,0" VerticalAlignment="Top" Width="75" Click="Badd_Click"/>
                 <DataGrid Name="dgCompany"  HorizontalAlignment="Left" Height="331" Margin="206,205,0,0" VerticalAlignment="Top" Width="586" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
-                    <!-- ItemsSource="{Binding LD}" -->
+                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Departement Name" Binding="{Binding Name}"/>
                         <DataGridTextColumn Header="Address" Binding="{Binding Adress}"/>

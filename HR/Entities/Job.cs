@@ -11,9 +11,10 @@ namespace HRuwp.Entities
     {
         [Key]
         public int Code { get; set; }
+        public string TiteleCode { get; set; }
         public string Name { get; set; }
-        public String Discription { get; set; }
-        public String Specification { get; set; }
+        public string Discription { get; set; }
+        public string Specification { get; set; }
 
         public override string ToString()
         {

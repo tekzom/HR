@@ -9,7 +9,7 @@
     <Grid>
         <TabControl Name="CTabs" HorizontalAlignment="Left" Height="533" Margin="212,147,0,0" VerticalAlignment="Top" Width="722">
 
-            <TabItem Name="Fitem" Header="Courses">
+            <TabItem Name="Fitem" Header="Courses" Height="32" VerticalAlignment="Bottom">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="22*"/>
@@ -61,7 +61,7 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="TabItem" Height="28" VerticalAlignment="Bottom">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
