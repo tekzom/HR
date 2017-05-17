@@ -71,13 +71,33 @@
     <Compile Include="AddCourse.xaml.cs">
       <DependentUpon>AddCourse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Certification.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\Education.cs" />
+    <Compile Include="Entities\EmployeeProject.cs" />
+    <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\PayGrade.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\Status.cs" />
     <Compile Include="JobDetailsSetup.xaml.cs">
       <DependentUpon>JobDetailsSetup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LeaveSetting.xaml.cs">
+      <DependentUpon>LeaveSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Managment\CertificationsServices.cs" />
+    <Compile Include="Managment\EducationServices.cs" />
+    <Compile Include="Managment\LanguagesServices.cs" />
     <Compile Include="Managment\PayServices.cs" />
+    <Compile Include="Managment\SkillsServices.cs" />
     <Compile Include="Managment\StatusServices.cs" />
+    <Compile Include="ProjectsClientSetup.xaml.cs">
+      <DependentUpon>ProjectsClientSetup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QualificationsSetup.xaml.cs">
+      <DependentUpon>QualificationsSetup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TrainingSetup.xaml.cs">
       <DependentUpon>TrainingSetup.xaml</DependentUpon>
     </Compile>
@@ -107,7 +127,19 @@
     <Compile Include="Entities\Loan.cs" />
     <Compile Include="Entities\Nationality.cs" />
     <Compile Include="Entities\Suspension.cs" />
+    <Page Include="LeaveSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectsClientSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QualificationsSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

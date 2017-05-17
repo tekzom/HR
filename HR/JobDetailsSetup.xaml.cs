@@ -81,11 +81,6 @@ namespace HR
            
         }
 
-        private void BsaveE_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void dgJobt_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
                 ////Delete
@@ -113,6 +108,57 @@ namespace HR
                 //    form.ShowDialog();
                 //    this.Refrech();
                 //}
+        }
+
+        private void bcancelpay_Click(object sender, RoutedEventArgs e)
+        {
+            SaddP.Visibility = Visibility.Collapsed;
+            sgpay.Visibility = Visibility.Visible;
+        }
+
+        private void bsavepay_Click(object sender, RoutedEventArgs e)
+        {
+            PL.Add(
+                   new PayGrade
+                   {
+                       Name = tnamep.Text,
+                       Salary=int.Parse(tsalary.Text),
+                   }
+               );
+            PL.Clear();
+            PL = new PayServices().ListPaygrades();
+            dgpay.ItemsSource = PL;
+            SaddP.Visibility = Visibility.Collapsed;
+            sgpay.Visibility = Visibility.Visible;
+
+        }
+
+        private void baddpay_Click(object sender, RoutedEventArgs e)
+        {
+            SaddP.Visibility = Visibility.Visible;
+            sgpay.Visibility = Visibility.Collapsed;
+        }
+
+        private void BsaveE_Click(object sender, RoutedEventArgs e)
+        {
+            SL.Add(
+                  new Status
+                  {
+                      Name = tnameE.Text,
+                      Description = Gets(tdesE),
+                  }
+              );
+            SL.Clear();
+            SL = new StatusServices().ListStatus();
+            Sstatu.ItemsSource = SL;
+            SaddE.Visibility = Visibility.Collapsed;
+            SgridE.Visibility = Visibility.Visible;
+        }
+
+        private void bcancelE_Click(object sender, RoutedEventArgs e)
+        {
+            SaddE.Visibility = Visibility.Collapsed;
+            SgridE.Visibility = Visibility.Visible;
         }
     }
 }
