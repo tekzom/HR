@@ -1,0 +1,275 @@
+﻿<UserControl x:Class="HR.QualificationsSetup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HR"
+             mc:Ignorable="d" 
+             d:DesignHeight="690" d:DesignWidth="1090">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="542" Margin="80,76,0,0" VerticalAlignment="Top" Width="927">
+            <TabItem Header="Skills">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Button x:Name="badd" Content="Add New +" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="86"/>
+                            <DataGrid x:Name="gridSkill" HorizontalAlignment="Left" Height="304" Margin="151,94,0,0" VerticalAlignment="Top" Width="627" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+
+
+                                    <DataGridTemplateColumn Header="Update">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bup" Content="Update"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="Delete">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bdel" Content="Delete"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </ScrollViewer>
+                    <ScrollViewer Name="SaddSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="125*"/>
+                                <RowDefinition Height="397*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="276*"/>
+                                <ColumnDefinition Width="127*"/>
+                                <ColumnDefinition Width="484*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Name="bcancelS" Content="Cancel" HorizontalAlignment="Left" Margin="120,196,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" />
+                            <Button Name="BsaveS" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" />
+                            <TextBox Name="tnameS" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+                            <RichTextBox Name="tdesS" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="35,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+                        </Grid>
+                    </ScrollViewer>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Education">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridEdu" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Button x:Name="baddEdu" Content="Add New +" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="86"/>
+                            <DataGrid x:Name="gridEdu" HorizontalAlignment="Left" Height="317" Margin="151,93,0,0" VerticalAlignment="Top" Width="630" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+
+
+                                    <DataGridTemplateColumn Header="Update">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bup" Content="Update"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="Delete">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bdel" Content="Delete"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </ScrollViewer>
+                    <ScrollViewer Name="SaddEduc" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="125*"/>
+                                <RowDefinition Height="397*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="276*"/>
+                                <ColumnDefinition Width="127*"/>
+                                <ColumnDefinition Width="484*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Name="bcancelEdu" Content="Cancel" HorizontalAlignment="Left" Margin="120,196,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" />
+                            <Button Name="BsaveEdu" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" />
+                            <TextBox Name="tnameEdu" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+                            <RichTextBox Name="tdesEdu" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="35,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+                        </Grid>
+                    </ScrollViewer>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Certifications">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridCer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Button x:Name="baddCer" Content="Add New +" HorizontalAlignment="Left" Margin="151,76,0,0" VerticalAlignment="Top" Width="86"/>
+                            <DataGrid x:Name="gridCer" HorizontalAlignment="Left" Height="304" Margin="151,117,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+
+
+                                    <DataGridTemplateColumn Header="Update">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bup" Content="Update"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="Delete">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bdel" Content="Delete"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </ScrollViewer>
+                    <ScrollViewer Name="SaddCer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="125*"/>
+                                <RowDefinition Height="397*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="276*"/>
+                                <ColumnDefinition Width="127*"/>
+                                <ColumnDefinition Width="484*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Name="bcancelCer" Content="Cancel" HorizontalAlignment="Left" Margin="120,196,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" />
+                            <Button Name="BsaveCer" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" />
+                            <TextBox Name="tnameCer" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+                            <RichTextBox Name="tdesCer" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="35,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+                        </Grid>
+                    </ScrollViewer>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Languages">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                        <Grid>
+                            <Button x:Name="baddLan" Content="Add New +" HorizontalAlignment="Left" Margin="151,76,0,0" VerticalAlignment="Top" Width="86"/>
+                            <DataGrid x:Name="gridLan" HorizontalAlignment="Left" Height="304" Margin="151,117,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+
+
+                                    <DataGridTemplateColumn Header="Update">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bup" Content="Update"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="Delete">
+                                        <DataGridTemplateColumn.CellTemplate>
+
+                                            <DataTemplate >
+
+                                                <Button x:Name="bdel" Content="Delete"/>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
+
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </ScrollViewer>
+                    <ScrollViewer Name="SaddLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="125*"/>
+                                <RowDefinition Height="397*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="276*"/>
+                                <ColumnDefinition Width="127*"/>
+                                <ColumnDefinition Width="484*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Name="bcancelLan" Content="Cancel" HorizontalAlignment="Left" Margin="120,196,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" />
+                            <Button Name="BsaveLan" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" />
+                            <TextBox Name="tnameLan" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+                            <RichTextBox Name="tdesLan" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="35,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+                        </Grid>
+                    </ScrollViewer>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

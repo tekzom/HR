@@ -1,28 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace HRuwp.Entities
+
+namespace HR.Entities
 {
-    public class Job
+    public class Skill
     {
         [Key]
-        public int Code { get; set; }
-        public string TiteleCode { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string Discription { get; set; }
-        public string Specification { get; set; }
+        public string Description { get; set; }
 
         public override string ToString()
         {
             return this.Name;
 
         }
-
     }
-
-    
 }

@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HRuwp.Entities;
+using HR.Entities;
 
 namespace HR.Managment
 {
-    class DepatementsServices
+    class StatusServices
     {
         Model_HR db = new Model_HR();
 
-        public bool Add(Departement Dp)
+        public bool Add(Status St)
         {
-            db.Departements.Add(Dp);
+            db.Statuss.Add(St);
             return db.SaveChanges() > 0;
         }
 
-        public bool Update(Departement Dp)
+        public bool Update(Status St)
         {
-            Departement Origin = db.Departements.Find(Dp.Id);
+            Status Origin = db.Statuss.Find(St.ID);
             if (Origin != null)
             {
-                db.Entry(Origin).CurrentValues.SetValues(Dp);
+                db.Entry(Origin).CurrentValues.SetValues(St);
                 return db.SaveChanges() > 0;
             }
             return false;
@@ -30,18 +30,18 @@ namespace HR.Managment
 
         public bool Delete(int id)
         {
-            db.Departements.Remove(db.Departements.Find(id));
+            db.Statuss.Remove(db.Statuss.Find(id));
             return db.SaveChanges() > 0;
         }
 
-        public List<Departement> ListDepartements()
+        public List<Status> ListStatus()
         {
-            return db.Departements.ToList();
+            return db.Statuss.ToList();
         }
 
-        public Departement FindExisting(int id)
+        public Status FindExisting(int id)
         {
-            Departement Origin = db.Departements.Find(id);
+            Status Origin = db.Statuss.Find(id);
             db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
             return Origin;
         }

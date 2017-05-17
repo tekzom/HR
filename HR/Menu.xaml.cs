@@ -20,29 +20,6 @@ namespace HR
     /// </summary>
     public partial class Menu : Window
     {
-        public Menu()
-        {
-            InitializeComponent();
-            
-            //s1.Visibility = Visibility.Collapsed;
-            //s2.Visibility = Visibility.Collapsed;
-
-        }
-
-        private void M1_Click(object sender, RoutedEventArgs e)
-        {
-            //s1.Visibility = Visibility.Visible;
-            //s2.Visibility = Visibility.Collapsed;
-
-        }
-
-        private void M2_Click(object sender, RoutedEventArgs e)
-        {
-            //s2.Visibility = Visibility.Visible;
-            //s1.Visibility = Visibility.Collapsed;
-
-        }
-
         private void ClickableMenuItem_Checked(object sender, RoutedEventArgs e)
         {
             MainPanel.Children.Clear();
@@ -68,6 +45,22 @@ namespace HR
         {
             MainPanel.Children.Clear();
             var w = new TrainingSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w);
+        }
+
+        private void JobDetailsSetup_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new JobDetailsSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w); 
+        }
+
+        private void ClickableMenuItem_Checked_2(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new JobDetailsSetup();
             //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }

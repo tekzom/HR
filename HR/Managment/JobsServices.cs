@@ -38,5 +38,12 @@ namespace HR.Managment
         {
             return db.Jobs.ToList();
         }
+
+        public Job FindExisting(int id)
+        {
+            Job Origin = db.Jobs.Find(id);
+            db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
+            return Origin;
+        }
     }
 }

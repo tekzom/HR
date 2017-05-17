@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HRuwp.Entities;
+using HR.Entities;
 
 namespace HR.Managment
 {
-    class DepatementsServices
+    class LanguagesServices
     {
         Model_HR db = new Model_HR();
 
-        public bool Add(Departement Dp)
+        public bool Add(Language x)
         {
-            db.Departements.Add(Dp);
+            db.Languages.Add(x);
             return db.SaveChanges() > 0;
         }
 
-        public bool Update(Departement Dp)
+        public bool Update(Language x)
         {
-            Departement Origin = db.Departements.Find(Dp.Id);
+            var Origin = db.Languages.Find(x.Id);
             if (Origin != null)
             {
-                db.Entry(Origin).CurrentValues.SetValues(Dp);
+                db.Entry(Origin).CurrentValues.SetValues(x);
                 return db.SaveChanges() > 0;
             }
             return false;
@@ -30,18 +30,18 @@ namespace HR.Managment
 
         public bool Delete(int id)
         {
-            db.Departements.Remove(db.Departements.Find(id));
+            db.Languages.Remove(db.Languages.Find(id));
             return db.SaveChanges() > 0;
         }
 
-        public List<Departement> ListDepartements()
+        public List<Language> ListLanguages()
         {
-            return db.Departements.ToList();
+            return db.Languages.ToList();
         }
 
-        public Departement FindExisting(int id)
+        public Language FindExisting(int id)
         {
-            Departement Origin = db.Departements.Find(id);
+            var Origin = db.Languages.Find(id);
             db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
             return Origin;
         }

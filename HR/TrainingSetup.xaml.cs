@@ -27,7 +27,8 @@ namespace HR
 
         private void addC_Click(object sender, RoutedEventArgs e)
         {
-            
+            Sgridcours.Visibility = Visibility.Collapsed;
+            Saddcours.Visibility = Visibility.Visible;
         }
     }
 }

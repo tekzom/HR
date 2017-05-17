@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HR
 {
     /// <summary>
-    /// Interaction logic for UC_AddJob.xaml
+    /// Interaction logic for ProjectsClientSetup.xaml
     /// </summary>
-    public partial class UC_AddJob : UserControl
+    public partial class ProjectsClientSetup : UserControl
     {
-        public UC_AddJob()
+        public ProjectsClientSetup()
         {
             InitializeComponent();
         }

@@ -1,5 +1,6 @@
 namespace HR
 {
+    using HR.Entities;
     using HRuwp.Entities;
     using System;
     using System.Data.Entity;
@@ -31,6 +32,17 @@ namespace HR
         public virtual DbSet<Leaves> Leaves { get; set; }
         public virtual DbSet<Suspension> Suspensions { get; set; }
         public virtual DbSet<Holiday> Holidays { get; set; }
+        public virtual DbSet<Status> Statuss { get; set; }
+        public virtual DbSet<PayGrade> PayGrades { get; set; }
+        public virtual DbSet<Certification> Certifications { get; set; }
+        public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<Education> Educations { get; set; }
+        public virtual DbSet<Language> Languages { get; set; }
+
+
+
+
+
 
 
 

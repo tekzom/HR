@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HRuwp.Entities;
+using HR.Entities;
 
 namespace HR.Managment
 {
-    class DepatementsServices
+    class EducationServices
     {
         Model_HR db = new Model_HR();
 
-        public bool Add(Departement Dp)
+        public bool Add(Education x)
         {
-            db.Departements.Add(Dp);
+            db.Educations.Add(x);
             return db.SaveChanges() > 0;
         }
 
-        public bool Update(Departement Dp)
+        public bool Update(Education x)
         {
-            Departement Origin = db.Departements.Find(Dp.Id);
+            var Origin = db.Educations.Find(x.Id);
             if (Origin != null)
             {
-                db.Entry(Origin).CurrentValues.SetValues(Dp);
+                db.Entry(Origin).CurrentValues.SetValues(x);
                 return db.SaveChanges() > 0;
             }
             return false;
@@ -30,18 +30,18 @@ namespace HR.Managment
 
         public bool Delete(int id)
         {
-            db.Departements.Remove(db.Departements.Find(id));
+            db.Educations.Remove(db.Educations.Find(id));
             return db.SaveChanges() > 0;
         }
 
-        public List<Departement> ListDepartements()
+        public List<Education> ListEducations()
         {
-            return db.Departements.ToList();
+            return db.Educations.ToList();
         }
 
-        public Departement FindExisting(int id)
+        public Education FindExisting(int id)
         {
-            Departement Origin = db.Departements.Find(id);
+            var Origin = db.Educations.Find(id);
             db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
             return Origin;
         }

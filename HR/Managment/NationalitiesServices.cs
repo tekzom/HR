@@ -34,6 +34,13 @@ namespace HR.Managment
             return db.SaveChanges() > 0;
         } 
 
+        public Nationality FindExisting(int id)
+        {
+            Nationality Origin = db.Nationalities.Find(id);
+            db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
+            return Origin;
+        }
+
         public List<Nationality> ListNationalities()
         {
             return db.Nationalities.ToList();

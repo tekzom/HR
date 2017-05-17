@@ -71,35 +71,49 @@
     <Compile Include="AddCourse.xaml.cs">
       <DependentUpon>AddCourse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Certification.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\Education.cs" />
+    <Compile Include="Entities\EmployeeProject.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\PayGrade.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\Skill.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="JobDetailsSetup.xaml.cs">
+      <DependentUpon>JobDetailsSetup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveSetting.xaml.cs">
+      <DependentUpon>LeaveSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Managment\CertificationsServices.cs" />
+    <Compile Include="Managment\EducationServices.cs" />
+    <Compile Include="Managment\LanguagesServices.cs" />
+    <Compile Include="Managment\PayServices.cs" />
+    <Compile Include="Managment\SkillsServices.cs" />
+    <Compile Include="Managment\StatusServices.cs" />
+    <Compile Include="ProjectsClientSetup.xaml.cs">
+      <DependentUpon>ProjectsClientSetup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QualificationsSetup.xaml.cs">
+      <DependentUpon>QualificationsSetup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TrainingSetup.xaml.cs">
       <DependentUpon>TrainingSetup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UC_AddDep.xaml.cs">
-      <DependentUpon>UC_AddDep.xaml</DependentUpon>
     </Compile>
     <Compile Include="UC_AddEmpl.xaml.cs">
       <DependentUpon>UC_AddEmpl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_AddJob.xaml.cs">
-      <DependentUpon>UC_AddJob.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UC_CompanyStracture.xaml.cs">
       <DependentUpon>UC_CompanyStracture.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UC_Job.xaml.cs">
-      <DependentUpon>UC_Job.xaml</DependentUpon>
     </Compile>
     <Page Include="AddCourse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="JobDetailsSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -113,14 +127,19 @@
     <Compile Include="Entities\Loan.cs" />
     <Compile Include="Entities\Nationality.cs" />
     <Compile Include="Entities\Suspension.cs" />
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="LeaveSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectsClientSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QualificationsSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,23 +147,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_AddDep.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UC_AddEmpl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_AddJob.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UC_CompanyStracture.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UC_Job.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,7 +187,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
