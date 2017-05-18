@@ -23,6 +23,8 @@ namespace HR
     /// </summary>
     public partial class JobDetailsSetup : UserControl
     {
+        bool isUpdate = false;
+        int jobid;
         JobsServices JS = new JobsServices();
         List<Job> JL = new List<Job>();
         List<PayGrade> PL = new List<PayGrade>();
@@ -49,7 +51,9 @@ namespace HR
 
         private void bsave_Click(object sender, RoutedEventArgs e)
         {
-            JS.Add(
+            if (!isUpdate)
+            {
+                JS.Add(
                    new Job
                    {
                        Name = tname.Text,
@@ -58,8 +62,23 @@ namespace HR
                        Specification = Gets(tspec),
                    }
                );
+               
+            }
+            else
+            {
+                JS.Update(new Job
+                {
+                    Code = jobid,
+                    Name = tname.Text,
+                    TiteleCode = tcode.Text,
+                    Discription = Gets(tdes),
+                    Specification = Gets(tspec),
+                });
+                isUpdate = false;
+            }
+            tdes.Document.Blocks.Clear();
             JL.Clear();
-            JL= new JobsServices().ListJobs();
+            JL = JS.ListJobs();
             dgJobt.ItemsSource = JL;
             Sgrid.Visibility = Visibility.Visible;
             SaddJ.Visibility = Visibility.Collapsed;
@@ -80,6 +99,8 @@ namespace HR
 
            
         }
+
+
 
         private void dgJobt_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -141,6 +162,7 @@ namespace HR
 
         private void BsaveE_Click(object sender, RoutedEventArgs e)
         {
+            
             SL.Add(
                   new Status
                   {
@@ -153,12 +175,32 @@ namespace HR
             Sstatu.ItemsSource = SL;
             SaddE.Visibility = Visibility.Collapsed;
             SgridE.Visibility = Visibility.Visible;
+
         }
 
         private void bcancelE_Click(object sender, RoutedEventArgs e)
         {
             SaddE.Visibility = Visibility.Collapsed;
             SgridE.Visibility = Visibility.Visible;
+        }
+
+        private void bdel_Click(object sender, RoutedEventArgs e)
+        {
+            var job = ((FrameworkElement)sender).DataContext as Job;
+            JS.Delete(job.Code);
+        }
+
+
+        private void bup_Click(object sender, RoutedEventArgs e)
+        {
+            var job = ((FrameworkElement)sender).DataContext as Job;
+            jobid = job.Code;
+            isUpdate = true;
+            tcode.Text = job.TiteleCode;
+            tname.Text = job.Name;
+            tdes.AppendText(job.Discription);
+            SaddJ.Visibility = Visibility.Visible;
+            Sgrid.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -16,6 +16,7 @@
                             <Button x:Name="Badd" Content="Add New +" HorizontalAlignment="Left" Margin="118,41,0,0" VerticalAlignment="Top" Width="75" Click="Badd_Click"/>
                             <DataGrid x:Name="dgJobt" HorizontalAlignment="Left" Height="394" Margin="118,80,0,0" VerticalAlignment="Top" Width="687" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" SelectionChanged="dgJobt_SelectionChanged">
                                 <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding Code}" Visibility="Collapsed" />
                                     <DataGridTextColumn Header="Code" Binding="{Binding TiteleCode}"/>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
 
@@ -24,7 +25,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Update" />
+                                                <Button x:Name="bup" Content="Update" Click="bup_Click" />
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -36,7 +37,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Delete" Command="Delete"/>
+                                                <Button x:Name="bdel" Content="Delete" Command="Delete" Click="bdel_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -51,7 +52,7 @@
                         </Grid>
                     </ScrollViewer>
 
-                    <ScrollViewer x:Name="SaddJ" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
+                    <ScrollViewer x:Name="SaddJ" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="125*"/>
