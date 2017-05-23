@@ -52,7 +52,7 @@
                         </Grid>
                     </ScrollViewer>
 
-                    <ScrollViewer x:Name="SaddJ" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer x:Name="SaddJ" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="125*"/>
@@ -81,7 +81,7 @@
             </TabItem>
             <TabItem Header="Pay Grades" Margin="-2,0,-2,-4">
                 <Grid Background="#FFE5E5E5">
-                    <ScrollViewer x:Name="sgpay" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer x:Name="sgpay" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
                         <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="887" Height="512">
 
@@ -96,7 +96,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Update"/>
+                                                <Button x:Name="bupPay" Content="Update" Click="bupPay_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -108,7 +108,7 @@
 
                                             <DataTemplate >
 
-                                                <Button  Content="Delete"/>
+                                                <Button  x:Name="bdelPay" Content="Delete" Click="bdelPay_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -119,23 +119,23 @@
                             <Button x:Name="baddpay" Content="Add New +" HorizontalAlignment="Left" Margin="175,74,0,0" VerticalAlignment="Top" Width="75" Click="baddpay_Click"/>
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SaddP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="125*"/>
-                                <RowDefinition Height="397*"/>
+                                <RowDefinition Height="37*"/>
+                                <RowDefinition Height="224*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="276*"/>
-                                <ColumnDefinition Width="127*"/>
-                                <ColumnDefinition Width="484*"/>
+                                <ColumnDefinition Width="196*"/>
+                                <ColumnDefinition Width="83*"/>
+                                <ColumnDefinition Width="625*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Name="bcancelpay" Content="Cancel" HorizontalAlignment="Left" Margin="120,196,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Click="bcancelpay_Click"/>
-                            <Button Name="bsavepay" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="bsavepay_Click"/>
+                            <Button Name="bcancelpay" Content="Cancel" HorizontalAlignment="Left" Margin="120,180,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Click="bcancelpay_Click" Height="23"/>
+                            <Button Name="bsavepay" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,180,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="bsavepay_Click" Height="23"/>
                             <TextBox Name="tnamep" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
-                            <TextBox Name="tsalary" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,94,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
-                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-                            <Label Content="Salary" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                            <TextBox Name="tsalary" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,108,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
+                            <Label Content="Salary" Grid.Column="1" HorizontalAlignment="Left" Margin="11,108,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="41"/>
 
                         </Grid>
                     </ScrollViewer>
@@ -145,9 +145,9 @@
 
 
                 <Grid Background="#FFE5E5E5">
-                    <ScrollViewer Name="SgridE" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer Name="SgridE" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="badd" Content="Add New +" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="86"/>
+                            <Button x:Name="baddES" Content="Add New +" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="86" Click="baddES_Click"/>
                             <DataGrid x:Name="Sstatu" HorizontalAlignment="Left" Height="394" Margin="151,93,0,0" VerticalAlignment="Top" Width="687" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Id" Binding="{Binding ID}"/>
@@ -160,7 +160,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Update"/>
+                                                <Button x:Name="bupE" Content="Update" Click="bupE_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -172,7 +172,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Delete"/>
+                                                <Button x:Name="bdelE" Content="Delete" Click="bdelE_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -186,23 +186,23 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddE" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SaddE" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="125*"/>
-                                <RowDefinition Height="397*"/>
+                                <RowDefinition Height="85*"/>
+                                <RowDefinition Height="437*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="276*"/>
-                                <ColumnDefinition Width="127*"/>
-                                <ColumnDefinition Width="484*"/>
+                                <ColumnDefinition Width="118*"/>
+                                <ColumnDefinition Width="39*"/>
+                                <ColumnDefinition Width="295*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Name="bcancelE" Content="Cancel" HorizontalAlignment="Left" Margin="120,196,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Click="bcancelE_Click"/>
-                            <Button Name="BsaveE" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="BsaveE_Click"/>
+                            <Button Name="bcancelE" Content="Cancel" HorizontalAlignment="Left" Margin="120,196,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Click="bcancelE_Click" Height="23"/>
+                            <Button Name="BsaveE" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="BsaveE_Click" Height="23"/>
                             <TextBox Name="tnameE" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
                             <RichTextBox Name="tdesE" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="35,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
-                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
+                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70"/>
 
                         </Grid>
                     </ScrollViewer>

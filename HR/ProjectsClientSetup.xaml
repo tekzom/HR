@@ -7,7 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="1090">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,59,0,0" VerticalAlignment="Top" Width="75"/>
         <TabControl HorizontalAlignment="Left" Height="455" Margin="96,115,0,0" VerticalAlignment="Top" Width="890">
             <TabItem Header="Client">
                 <Grid Background="#FFE5E5E5">
@@ -93,7 +92,7 @@
             </TabItem>
             <TabItem Header="Projects">
                 <Grid Background="#FFE5E5E5">
-                    <ScrollViewer Name="SgridProj" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SgridProj" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                         <Grid>
                             <Button x:Name="baddProj" Content="Add New +" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="86"/>
                             <DataGrid x:Name="gridProj" HorizontalAlignment="Left" Height="304" Margin="120,99,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
@@ -134,7 +133,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SaddLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="33*"/>
@@ -163,7 +162,7 @@
 
             <TabItem Header="Employee Projects">
                 <Grid Background="#FFE5E5E5">
-                    <ScrollViewer Name="SgridEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SgridEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
                             <Button x:Name="baddEP" Content="Add New +" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="86"/>
                             <DataGrid x:Name="gridEP" HorizontalAlignment="Left" Height="304" Margin="120,99,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
@@ -203,7 +202,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SaddEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="33*"/>

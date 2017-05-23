@@ -24,8 +24,10 @@ namespace HR
     public partial class JobDetailsSetup : UserControl
     {
         bool isUpdate = false;
-        int jobid;
+        int jobid,payid, Statuid;
         JobsServices JS = new JobsServices();
+        PayServices PS = new PayServices();
+        StatusServices SS = new StatusServices();
         List<Job> JL = new List<Job>();
         List<PayGrade> PL = new List<PayGrade>();
         List<Status> SL = new List<Status>();
@@ -48,6 +50,8 @@ namespace HR
             SL = new StatusServices().ListStatus();
             Sstatu.ItemsSource = SL;
         }
+
+        ///////////// JOB /////////////////
 
         private void bsave_Click(object sender, RoutedEventArgs e)
         {
@@ -80,108 +84,9 @@ namespace HR
             JL.Clear();
             JL = JS.ListJobs();
             dgJobt.ItemsSource = JL;
+
             Sgrid.Visibility = Visibility.Visible;
             SaddJ.Visibility = Visibility.Collapsed;
-        }
-
-        private void bcanc_Click(object sender, RoutedEventArgs e)
-        {
-            Sgrid.Visibility = Visibility.Visible;
-            SaddJ.Visibility = Visibility.Collapsed;
-
-
-        }
-
-        private void Badd_Click(object sender, RoutedEventArgs e)
-        {
-            Sgrid.Visibility = Visibility.Collapsed;
-            SaddJ.Visibility = Visibility.Visible;
-
-           
-        }
-
-
-
-        private void dgJobt_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-                ////Delete
-                //int id = Convert.ToInt32(MedsGrid.Rows[e.RowIndex].Cells["MedID"].Value);
-                //Medicament med = Meds.FindExisted(id);
-                //if (e.ColumnIndex == MedsGrid.Columns["Remove"].Index && e.RowIndex > 0)
-                //{
-                //    if (DialogResult.Yes == MessageBox.Show("Are You sure..!", "Deleting Medicament", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                //    {
-
-                //        Meds.Delete(med.MedID);
-                //        this.Refrech();
-                //    }
-
-                //}
-                ////Edite
-                //if (e.ColumnIndex == MedsGrid.Columns["Edit"].Index && e.RowIndex > 0)
-                //{
-                //    CRUD_Medicament form = new CRUD_Medicament()
-                //    {
-                //        IsUpdate = true,
-                //        Meds = Meds
-                //    };
-                //    form.Current(med);
-                //    form.ShowDialog();
-                //    this.Refrech();
-                //}
-        }
-
-        private void bcancelpay_Click(object sender, RoutedEventArgs e)
-        {
-            SaddP.Visibility = Visibility.Collapsed;
-            sgpay.Visibility = Visibility.Visible;
-        }
-
-        private void bsavepay_Click(object sender, RoutedEventArgs e)
-        {
-            PL.Add(
-                   new PayGrade
-                   {
-                       Name = tnamep.Text,
-                       Salary=int.Parse(tsalary.Text),
-                   }
-               );
-            PL.Clear();
-            PL = new PayServices().ListPaygrades();
-            dgpay.ItemsSource = PL;
-            SaddP.Visibility = Visibility.Collapsed;
-            sgpay.Visibility = Visibility.Visible;
-
-        }
-
-        private void baddpay_Click(object sender, RoutedEventArgs e)
-        {
-            SaddP.Visibility = Visibility.Visible;
-            sgpay.Visibility = Visibility.Collapsed;
-        }
-
-        private void BsaveE_Click(object sender, RoutedEventArgs e)
-        {
-            
-            SL.Add(
-                  new Status
-                  {
-                      Name = tnameE.Text,
-                      Description = Gets(tdesE),
-                  }
-              );
-            SL.Clear();
-            SL = new StatusServices().ListStatus();
-            Sstatu.ItemsSource = SL;
-            SaddE.Visibility = Visibility.Collapsed;
-            SgridE.Visibility = Visibility.Visible;
-
-        }
-
-        private void bcancelE_Click(object sender, RoutedEventArgs e)
-        {
-            SaddE.Visibility = Visibility.Collapsed;
-            SgridE.Visibility = Visibility.Visible;
         }
 
         private void bdel_Click(object sender, RoutedEventArgs e)
@@ -201,6 +106,154 @@ namespace HR
             tdes.AppendText(job.Discription);
             SaddJ.Visibility = Visibility.Visible;
             Sgrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void bcanc_Click(object sender, RoutedEventArgs e)
+        {
+            Sgrid.Visibility = Visibility.Visible;
+            SaddJ.Visibility = Visibility.Collapsed;
+        }
+
+        private void Badd_Click(object sender, RoutedEventArgs e)
+        {
+            Sgrid.Visibility = Visibility.Collapsed;
+            SaddJ.Visibility = Visibility.Visible;
+        }
+
+        /////////////////// PayGrade //////////////////
+
+        private void bsavepay_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isUpdate)
+            {
+                PS.Add(
+                   new PayGrade
+                   {
+                       Name = tnamep.Text,
+                       Salary = int.Parse(tsalary.Text),
+                   }
+               );
+
+            }
+            else
+            {
+                PS.Update(new PayGrade
+                {
+                    Code = payid,
+                    Name = tnamep.Text,
+                    Salary = int.Parse(tsalary.Text),
+                });
+                isUpdate = false;
+            }
+            tdes.Document.Blocks.Clear();
+            PL.Clear();
+            PL = PS.ListPaygrades();
+            dgpay.ItemsSource = PL;
+
+            SaddP.Visibility = Visibility.Collapsed;
+            sgpay.Visibility = Visibility.Visible;
+
+        }
+
+
+        private void bdelPay_Click(object sender, RoutedEventArgs e)
+        {
+            var Pay = ((FrameworkElement)sender).DataContext as PayGrade;
+            PS.Delete(Pay.Code);
+        }
+
+        private void bupPay_Click(object sender, RoutedEventArgs e)
+        {
+            var Pay = ((FrameworkElement)sender).DataContext as PayGrade;
+            payid = Pay.Code;
+            isUpdate = true;
+            tnamep.Text = Pay.Name;
+            tsalary.Text = Pay.Salary.ToString();
+            SaddP.Visibility = Visibility.Visible;
+            sgpay.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void bcancelpay_Click(object sender, RoutedEventArgs e)
+        {
+            SaddP.Visibility = Visibility.Collapsed;
+            sgpay.Visibility = Visibility.Visible;
+        }
+
+        private void baddpay_Click(object sender, RoutedEventArgs e)
+        {
+            SaddP.Visibility = Visibility.Visible;
+            sgpay.Visibility = Visibility.Collapsed;
+        }
+        /////////////////////// EStatus ////////////////////
+
+
+        private void BsaveE_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isUpdate)
+            {
+                SS.Add(
+                   new Status
+                   {
+                       Name = tnameE.Text,
+                       Description = Gets(tdesE),
+                   }
+               );
+
+            }
+            else
+            {
+                SS.Update(new Status
+                {
+                    ID = Statuid,
+                    Name = tnameE.Text,
+                    Description = Gets(tdesE),
+                });
+                isUpdate = false;
+            }
+            tdesE.Document.Blocks.Clear();
+            SL.Clear();
+            SL = SS.ListStatus();
+            Sstatu.ItemsSource = SL;
+
+
+            SaddE.Visibility = Visibility.Collapsed;
+            SgridE.Visibility = Visibility.Visible;
+
+        }
+
+        private void bcancelE_Click(object sender, RoutedEventArgs e)
+        {
+            SaddE.Visibility = Visibility.Collapsed;
+            SgridE.Visibility = Visibility.Visible;
+        }
+
+        private void dgJobt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void baddES_Click(object sender, RoutedEventArgs e)
+        {
+            SaddE.Visibility = Visibility.Visible;
+            SgridE.Visibility = Visibility.Collapsed;
+        }
+
+        private void bdelE_Click(object sender, RoutedEventArgs e)
+        {
+            var Statu = ((FrameworkElement)sender).DataContext as Status;
+            SS.Delete(Statu.ID);
+        }
+
+        private void bupE_Click(object sender, RoutedEventArgs e)
+        {
+            var Statu = ((FrameworkElement)sender).DataContext as Status;
+            Statuid = Statu.ID;
+            isUpdate = true;
+            tnameE.Text = Statu.Name;
+            tdesE.AppendText(Statu.Description);
+            SaddP.Visibility = Visibility.Visible;
+            sgpay.Visibility = Visibility.Collapsed;
         }
     }
 }
