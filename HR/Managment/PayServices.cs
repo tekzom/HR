@@ -34,6 +34,13 @@ namespace HR.Managment
             return db.SaveChanges() > 0;
         }
 
+        public PayGrade FindExisting(int id)
+        {
+            PayGrade Origin = db.PayGrades.Find(id);
+            db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
+            return Origin;
+        }
+
         public List<PayGrade> ListPaygrades()
         {
             return db.PayGrades.ToList();

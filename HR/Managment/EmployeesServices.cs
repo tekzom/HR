@@ -34,6 +34,16 @@ namespace HR.Managment
             return db.SaveChanges() > 0;
         }
 
+        public Employee FindExisting(int id)
+        {
+            Employee Origin = db.Employees.Find(id);
+            db.Entry(Origin).State = System.Data.Entity.EntityState.Modified;
+            return Origin;
+        }
+
+
+    
+
         public List<Employee> ListEmployees()
         {
             return db.Employees.ToList();
