@@ -71,6 +71,9 @@
     <Compile Include="AddCourse.xaml.cs">
       <DependentUpon>AddCourse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Employees.xaml.cs">
+      <DependentUpon>Employees.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Certification.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Education.cs" />
@@ -87,9 +90,11 @@
       <DependentUpon>LeaveSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managment\CertificationsServices.cs" />
+    <Compile Include="Managment\ClientsServices.cs" />
     <Compile Include="Managment\EducationServices.cs" />
     <Compile Include="Managment\LanguagesServices.cs" />
     <Compile Include="Managment\PayServices.cs" />
+    <Compile Include="Managment\ProjectsServices.cs" />
     <Compile Include="Managment\SkillsServices.cs" />
     <Compile Include="Managment\StatusServices.cs" />
     <Compile Include="ProjectsClientSetup.xaml.cs">
@@ -108,6 +113,10 @@
       <DependentUpon>UC_CompanyStracture.xaml</DependentUpon>
     </Compile>
     <Page Include="AddCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

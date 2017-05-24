@@ -23,7 +23,7 @@ namespace HR
         private void ClickableMenuItem_Checked(object sender, RoutedEventArgs e)
         {
             MainPanel.Children.Clear();
-            var w = new UC_CompanyStracture();
+            var w = new JobDetailsSetup();
             //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
@@ -49,18 +49,40 @@ namespace HR
             MainPanel.Children.Add(w);
         }
 
-        private void JobDetailsSetup_Click(object sender, RoutedEventArgs e)
-        {
-            MainPanel.Children.Clear();
-            var w = new JobDetailsSetup();
-            //w.IsUpdate = false;
-            MainPanel.Children.Add(w); 
-        }
 
         private void ClickableMenuItem_Checked_2(object sender, RoutedEventArgs e)
         {
             MainPanel.Children.Clear();
             var w = new JobDetailsSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w);
+        }
+
+        private void PCS_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new ProjectsClientSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w);
+        }
+
+        private void Qualification_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new QualificationsSetup();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w);
+        }
+
+        private void ClickableMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Employee_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new Employees();
             //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }

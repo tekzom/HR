@@ -1,5 +1,6 @@
 namespace HR.Migrations
 {
+    using HR.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,16 @@ namespace HR.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
+
+            //context.Clients.AddOrUpdate(
+            //  c => c.Id,
+            //  new Client { Name = "Nabil", Details = "None", Address = "Tanger Braness", ContactNumber = "+212661425312", ContactEmail = "NabileComp@gmail.com", CompanyUrl = "www.NabilExpress.com", Status = "None", FirstContact = DateTime.Now },
+            //  new Client { Name = "Mouad", Details = "None", Address = "Tanger bokhalef", ContactNumber = "+212667225333", ContactEmail = "MouadCompany@gmail.com", CompanyUrl = "www.MouadExpress.com", Status = "None", FirstContact = DateTime.Now }
+            //);
+
+
         }
     }
 }

@@ -14,5 +14,11 @@ namespace HRuwp.Entities
         public string Name { get; set; }
         public DateTime DateD { get; set; }
         public DateTime DateF { get; set; }
+
+        public override string ToString()
+        {
+            return this.Name;
+
+        }
     }
 }

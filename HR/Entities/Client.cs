@@ -19,5 +19,11 @@ namespace HR.Entities
         public string CompanyUrl { get; set; }
         public string Status { get; set; }
         public DateTime FirstContact { get; set; }
+
+        public override string ToString()
+        {
+            return this.Name;
+
+        }
     }
 }

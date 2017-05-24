@@ -38,6 +38,8 @@ namespace HR
         public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<Education> Educations { get; set; }
         public virtual DbSet<Language> Languages { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Project> Projects { get; set; }
 
 
 

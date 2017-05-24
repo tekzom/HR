@@ -7,15 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="1090">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,59,0,0" VerticalAlignment="Top" Width="75"/>
-        <TabControl HorizontalAlignment="Left" Height="455" Margin="96,115,0,0" VerticalAlignment="Top" Width="890">
+        <TabControl HorizontalAlignment="Left" Height="455" Margin="96,115,0,0" VerticalAlignment="Top" Width="890" >
             <TabItem Header="Client">
                 <Grid Background="#FFE5E5E5">
 
-                    <ScrollViewer Name="SgridClie" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SgridClie" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                         <Grid>
-                            <Button x:Name="baddClie" Content="Add New +" HorizontalAlignment="Left" Margin="151,76,0,0" VerticalAlignment="Top" Width="86"/>
-                            <DataGrid x:Name="gridClie" HorizontalAlignment="Left" Height="304" Margin="151,117,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button x:Name="baddClie" Content="Add New +" HorizontalAlignment="Left" Margin="109,79,0,0" VerticalAlignment="Top" Width="86" Click="baddClie_Click"/>
+                            <DataGrid x:Name="gridClie" HorizontalAlignment="Left" Height="304" Margin="109,117,0,0" VerticalAlignment="Top" Width="731" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                     <DataGridTextColumn Header="Details" Binding="{Binding Details}"/>
@@ -30,7 +29,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bup" Content="Update"/>
+                                                <Button x:Name="updClie" Content="Update"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -42,7 +41,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Delete"/>
+                                                <Button x:Name="delClie" Content="Delete" Command="Delete" Click="delClie_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -67,8 +66,8 @@
                                 <ColumnDefinition Width="133*"/>
                                 <ColumnDefinition Width="596*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Name="bcancelClie" Content="Cancel" HorizontalAlignment="Left" Margin="107,332,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Height="23" />
-                            <Button Name="BsaveClie" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="187,332,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="23" />
+                            <Button Name="bcancelClie" Content="Cancel" HorizontalAlignment="Left" Margin="107,332,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Height="23" Click="bcancelClie_Click"/>
+                            <Button Name="BsaveClie" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="187,332,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="23" Click="BsaveClie_Click"/>
                             <TextBox Name="tnameClie" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
                             <RichTextBox Name="tdetailC" Grid.Column="2" HorizontalAlignment="Left" Height="55" Margin="10,41,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
                             <RichTextBox Name="tadrC" Grid.Column="2" HorizontalAlignment="Left" Height="55" Margin="10,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
@@ -81,21 +80,24 @@
                             <Label Content="Company Url" Grid.Column="1" HorizontalAlignment="Left" Margin="10,220,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="79"/>
                             <Label Content="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="10,248,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
                             <Label Content="First Contact Date" Grid.Column="1" HorizontalAlignment="Left" Margin="10,279,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="105"/>
-                            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,164,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
-                            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,192,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
-                            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,220,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" RenderTransformOrigin="0.125,0.348"/>
-                            <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,248,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
-                            <DatePicker Grid.Column="2" HorizontalAlignment="Left" Margin="10,279,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
+                            <TextBox Name="tcontactNum" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,164,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+                            <TextBox Name="tcontactEmail" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,192,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+                            <TextBox Name="tcompanyUrl" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,220,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" RenderTransformOrigin="0.125,0.348"/>
+                            <ComboBox Name="CombostatuClie" Grid.Column="2" HorizontalAlignment="Left" Margin="10,248,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24">
+                                <ComboBoxItem  Content="Active" HorizontalAlignment="Left" Width="237"/>
+                                <ComboBoxItem  Content="Inactive" HorizontalAlignment="Left" Width="237"/>
+                            </ComboBox>
+                            <DatePicker Name="DFristCont" Grid.Column="2" HorizontalAlignment="Left" Margin="10,279,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
 
                         </Grid>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Header="Projects">
-                <Grid Background="#FFE5E5E5">
-                    <ScrollViewer Name="SgridProj" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+            <TabItem Header="Projects"  >
+                <Grid Background="#FFE5E5E5" >
+                    <ScrollViewer Name="SgridProj" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="baddProj" Content="Add New +" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="86"/>
+                            <Button x:Name="baddProj" Content="Add New +" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="86" Click="baddProj_Click"/>
                             <DataGrid x:Name="gridProj" HorizontalAlignment="Left" Height="304" Margin="120,99,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
@@ -108,7 +110,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bup" Content="Update"/>
+                                                <Button x:Name="UpdProje" Content="Update" Click="UpdProje_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -120,7 +122,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Delete"/>
+                                                <Button x:Name="DelProj" Content="Delete" Click="DelProj_Click" Command="Delete"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -134,26 +136,29 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SaddProj" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="33*"/>
-                                <RowDefinition Height="386*"/>
+                                <RowDefinition Height="16*"/>
+                                <RowDefinition Height="45*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="216*"/>
                                 <ColumnDefinition Width="79*"/>
                                 <ColumnDefinition Width="585*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Name="bcancelPro" Content="Cancel" HorizontalAlignment="Left" Margin="89,230,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Height="23" />
-                            <Button Name="BsavePro" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="174,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="23" />
+                            <Button Name="bcancelPro" Content="Cancel" HorizontalAlignment="Left" Margin="89,230,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Height="23" Click="bcancelPro_Click"/>
+                            <Button Name="BsavePro" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="174,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="23" Click="BsavePro_Click"/>
                             <TextBox Name="tnamePro" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
                             <RichTextBox Name="tdetPro" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="10,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
                             <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
                             <Label Content="Details" Grid.Column="1" HorizontalAlignment="Left" Margin="10,79,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70"/>
-                            <Label Content="Client" Grid.Column="1" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="38"/>
-                            <ComboBox Name="comboClie" Grid.Column="2" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
-                            <ComboBox Name="ComboStatu" Grid.Column="2" HorizontalAlignment="Left" Margin="10,175,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
+                            <Label Content="Client" Grid.Column="1" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="55"/>
+                            <ComboBox Name="comboClie" Grid.Column="2" HorizontalAlignment="Left" Margin="10,35,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
+                            <ComboBox Name="ComboStatu" Grid.Column="2" HorizontalAlignment="Left" Margin="10,175,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24">
+                                <ComboBoxItem  Content="Active" HorizontalAlignment="Left" Width="237"/>
+                                <ComboBoxItem  Content="Inactive" HorizontalAlignment="Left" Width="237"/>
+                            </ComboBox>
                             <Label Content="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="10,175,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
 
                         </Grid>
@@ -163,9 +168,9 @@
 
             <TabItem Header="Employee Projects">
                 <Grid Background="#FFE5E5E5">
-                    <ScrollViewer Name="SgridEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SgridEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
                         <Grid>
-                            <Button x:Name="baddEP" Content="Add New +" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="86"/>
+                            <Button x:Name="baddEP" Content="Add New +" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="86" Click="baddEP_Click"/>
                             <DataGrid x:Name="gridEP" HorizontalAlignment="Left" Height="304" Margin="120,99,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Employee" Binding="{Binding Empl}"/>
@@ -176,9 +181,7 @@
                                         <DataGridTemplateColumn.CellTemplate>
 
                                             <DataTemplate >
-
                                                 <Button x:Name="bup" Content="Update"/>
-
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
 
@@ -203,25 +206,30 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SaddEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="33*"/>
-                                <RowDefinition Height="386*"/>
+                                <RowDefinition Height="82*"/>
+                                <RowDefinition Height="345*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="201*"/>
                                 <ColumnDefinition Width="95*"/>
                                 <ColumnDefinition Width="584*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Name="bcancelEP" Content="Cancel" HorizontalAlignment="Left" Margin="89,230,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Height="23" />
-                            <Button Name="BsaveEP" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="174,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="23" />
+                            <Button Name="bcancelEP" Content="Cancel" HorizontalAlignment="Left" Margin="89,230,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.52,1.087" Grid.Column="2" Grid.Row="1" Height="23" Click="bcancelEP_Click"/>
+                            <Button Name="BsaveEP" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="174,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="23" Click="BsaveEP_Click"/>
                             <RichTextBox Name="tdetEP" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="10,135,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
                             <Label Content="Employee" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70"/>
                             <Label Content="Details" Grid.Column="1" HorizontalAlignment="Left" Margin="10,135,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70"/>
                             <Label Content="Project" Grid.Column="1" HorizontalAlignment="Left" Margin="10,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="54"/>
                             <ComboBox Name="comboEPProject" Grid.Column="2" HorizontalAlignment="Left" Margin="10,50,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
-                            <ComboBox Name="ComboEPStatus" Grid.Column="2" HorizontalAlignment="Left" Margin="10,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
+                            <ComboBox Name="ComboEPStatus" Grid.Column="2" HorizontalAlignment="Left" Margin="10,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24">
+                                <ComboBoxItem Content="Completed" HorizontalAlignment="Left" Width="237"/>
+                                <ComboBoxItem Content="Current" HorizontalAlignment="Left" Width="237"/>
+                                <ComboBoxItem Content="Inactive" HorizontalAlignment="Left" Width="237"/>
+
+                            </ComboBox>
                             <Label Content="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="10,90,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
                             <ComboBox Name="ComboEPEmployee" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="24"/>
 
