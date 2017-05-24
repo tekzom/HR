@@ -29,6 +29,15 @@ namespace HRuwp.Entities
         public Employee Supervisor { get; set; }
         public Status Stat { get; set; }
         public PayGrade pay { get; set; }
+        public virtual List<Skill> Skills { get; set; }
+        public virtual List<Education> Educations { get; set; }
+        public virtual List<Language> Languages { get; set; }
+        public virtual List<Certification> Certifications { get; set; }
+        public virtual List<Project> Projects { get; set; }
+
+        //public Employee() {
+        //    this.Lproject = new HashSet<Project>().ToList();
+        //}
 
 
         public override string ToString()

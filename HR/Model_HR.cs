@@ -42,6 +42,10 @@ namespace HR
         public virtual DbSet<Project> Projects { get; set; }
 
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+            base.OnModelCreating(modelBuilder);
+        }
+
 
 
 
