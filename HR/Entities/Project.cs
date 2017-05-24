@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HR;
-
+using HRuwp.Entities;
 
 namespace HR.Entities
 {
@@ -17,6 +17,9 @@ namespace HR.Entities
         public Client Clie { get; set; }
         public string Details { get; set; }
         public string Status { get; set; }
+        public virtual List<Employee> Employees { get; set; }
+
+
 
         public override string ToString()
         {

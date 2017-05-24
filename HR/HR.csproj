@@ -77,7 +77,6 @@
     <Compile Include="Entities\Certification.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Education.cs" />
-    <Compile Include="Entities\EmployeeProject.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\PayGrade.cs" />
     <Compile Include="Entities\Project.cs" />
