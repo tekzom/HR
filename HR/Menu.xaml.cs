@@ -74,5 +74,17 @@ namespace HR
             MainPanel.Children.Add(w);
         }
 
+        private void ClickableMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Employee_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new Employees();
+            //w.IsUpdate = false;
+            MainPanel.Children.Add(w);
+        }
     }
 }

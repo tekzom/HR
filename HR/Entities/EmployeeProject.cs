@@ -15,6 +15,12 @@ namespace HR.Entities
         public Project Proj { get; set; }
         public Employee Empl { get; set; }
         public string Details { get; set; }
-        
+
+        public override string ToString()
+        {
+            return this.Id.ToString();
+
+        }
+
     }
 }

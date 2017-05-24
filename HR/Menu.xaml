@@ -23,7 +23,7 @@
                 <controls:ClickableMenuItem Name="Qualification" Text="Qualification Setup" Icon="Assets/person.png" Checked="ClickableMenuItem_Checked_1" Click="Qualification_Click">
                     <Label Content="Label" Height="100" Width="100"/>
                 </controls:ClickableMenuItem>
-                <controls:ClickableMenuItem Text="Add Employee" Icon="Assets/favorite.png" />
+                <controls:ClickableMenuItem Name="Employee" Text="Employee" Icon="Assets/favorite.png" Click="Employee_Click"/>
                 
             </controls:SideMenu.Items>
             <controls:SideMenu.BarItems>
