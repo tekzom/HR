@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+<<<<<<< HEAD
         <ListView Name="myListView">
             <ListView.View>
                 <GridView>
@@ -37,5 +38,22 @@
                 </GridView>
             </ListView.View>
         </ListView>
+=======
+        <DataGrid Name ="GridTest">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Name}" />
+                <DataGridTemplateColumn Header="CheckBox">
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate >
+
+                            <CheckBox x:Name="Check" IsChecked="{Binding isCheck}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+>>>>>>> origin/master
     </Grid>
 </UserControl>
