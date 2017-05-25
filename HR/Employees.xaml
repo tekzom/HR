@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="1090">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="650" Margin="10,30,0,0" VerticalAlignment="Top" Width="1070">
+        <TabControl HorizontalAlignment="Left" Height="650" Margin="10,30,0,0" VerticalAlignment="Top" Width="1070" >
             <TabItem Header="Employee">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
@@ -25,7 +25,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="updClie" Content="Update"/>
+                                                <Button x:Name="UpEmployee" Content="Update" Click="UpEmployee_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -37,7 +37,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="delClie" Content="Delete" Command="Delete" />
+                                                <Button x:Name="delEmployee" Content="Delete" Command="Delete" Click="delEmployee_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>

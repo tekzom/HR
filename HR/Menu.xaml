@@ -25,6 +25,7 @@
                 </controls:ClickableMenuItem>
                 <controls:ClickableMenuItem Name="Employee" Text="Employee" Icon="Assets/favorite.png" Click="Employee_Click"/>
                 
+                
             </controls:SideMenu.Items>
             <controls:SideMenu.BarItems>
                 <controls:SelectableBarButtonMenuItem Icon="Assets/list.png" />
@@ -37,7 +38,7 @@
             </StackPanel.Background>
         </StackPanel>
 
-        <!--<StackPanel HorizontalAlignment="Left" Height="308" Margin="66,75,0,0" VerticalAlignment="Top" Width="100">
+        <!--<<StackPanel HorizontalAlignment="Left" Height="308" Margin="66,75,0,0" VerticalAlignment="Top" Width="100">
             <Button Name="M1" Content="M1" Click="M1_Click" />
             <StackPanel Name="s1"  Height="61">
                 <Button Content="M1Button1"/>
@@ -51,6 +52,6 @@
                 <Button Content="M2Button3"/>
             </StackPanel>
 
-        </StackPanel>-->
+            </StackPanel>-->
     </Grid>
 </Window>
