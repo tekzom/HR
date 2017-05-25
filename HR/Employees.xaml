@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="1090">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="650" Margin="10,30,0,0" VerticalAlignment="Top" Width="1070">
-            <TabItem Header="Employee">
+        <TabControl Name="TabMain"  HorizontalAlignment="Left" Height="650" Margin="10,30,0,0" VerticalAlignment="Top" Width="1070">
+            <TabItem Name="Employee" Header="Employee" Visibility="Visible">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
                         <Grid Background="#FFE5E5E5">
@@ -43,13 +43,13 @@
                                         </DataGridTemplateColumn.CellTemplate>
 
                                     </DataGridTemplateColumn>
-                                    
+
                                     <DataGridTemplateColumn Header="Info">
                                         <DataGridTemplateColumn.CellTemplate>
 
                                             <DataTemplate >
 
-                                                <Button x:Name="btInfo" Content="Info" />
+                                                <Button x:Name="btInfo" Content="Info" Click="btInfo_Click" />
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -118,6 +118,75 @@
 
                         </Grid>
                     </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Name="Skills" Header="Skills" >
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                        <Grid>
+                            <Button x:Name="btManageSkill" Content="Manage Skills" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="86" Click="btManageSkill_Click"/>
+                            <DataGrid x:Name="gridSkill" HorizontalAlignment="Left" Height="304" Margin="151,94,0,0" VerticalAlignment="Top" Width="627" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+
+            </TabItem>
+            <TabItem Name="Education"  Header="Education">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridEdu" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Button x:Name="btManageEducation" Content="Manage Educations" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="120" Click="btManageEducation_Click"/>
+                            <DataGrid x:Name="gridEdu" HorizontalAlignment="Left" Height="317" Margin="151,93,0,0" VerticalAlignment="Top" Width="630" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Name="Certification"  Header="Certifications">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridCer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                        <Grid>
+                            <Button x:Name="btManageCertification" Content="Manage Certifications" HorizontalAlignment="Left" Margin="151,76,0,0" VerticalAlignment="Top" Width="86" Click="btManageCertification_Click"/>
+                            <DataGrid x:Name="gridCer" HorizontalAlignment="Left" Height="304" Margin="151,117,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </ScrollViewer>
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="Languages" Header="Languages">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Name="SgridLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                        <Grid>
+                            <Button x:Name="btManageLanguages" Content="Manage Languages" HorizontalAlignment="Left" Margin="151,76,0,0" VerticalAlignment="Top" Width="auto" Padding="5" Click="btManageLanguages_Click"/>
+                            <DataGrid x:Name="gridLan" HorizontalAlignment="Left" Height="304" Margin="151,117,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                               </DataGrid.Columns>
+                            </DataGrid>
+
+
+                        </Grid>
+                    </ScrollViewer>
+
                 </Grid>
             </TabItem>
         </TabControl>

@@ -185,5 +185,35 @@ namespace HR
             ClearInputs();
             Show(SgridEmployee, SaddEmployee);
         }
+
+        private void btInfo_Click(object sender, RoutedEventArgs e) {
+            Employee ep = ((FrameworkElement)sender).DataContext as Employee;
+            gridSkill.ItemsSource = ep.Skills;
+            gridCer.ItemsSource = ep.Certifications;
+            gridEdu.ItemsSource = ep.Educations;
+            gridLan.ItemsSource = ep.Languages;
+            Employee.Visibility = Visibility.Collapsed;
+            TabMain.SelectedIndex = 1;
+            Skills.Visibility = Visibility.Visible;
+            Education.Visibility = Visibility.Visible;
+            Languages.Visibility = Visibility.Visible;
+            Certification.Visibility = Visibility.Visible;
+        }
+
+        private void btManageSkill_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btManageEducation_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btManageCertification_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btManageLanguages_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
