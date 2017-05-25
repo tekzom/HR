@@ -20,6 +20,13 @@ namespace HR
     /// </summary>
     public partial class Menu : Window
     {
+        public Menu() {
+            MainPanel.Children.Clear();
+            var w = new Test();
+            MainPanel.Children.Add(w);
+        }
+
+
         private void ClickableMenuItem_Checked(object sender, RoutedEventArgs e)
         {
             MainPanel.Children.Clear();

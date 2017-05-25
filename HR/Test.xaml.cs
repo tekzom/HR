@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HR.Entities;
+using HR.Managment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,24 @@ namespace HR
     /// <summary>
     /// Interaction logic for Test.xaml
     /// </summary>
+    class ObjectGrid
+    {
+        public string Name { get; set; }
+        public bool isChecked { get; set; }
+    }
     public partial class Test : UserControl
     {
-        public Test()
-        {
+        public Test() {
             InitializeComponent();
+            FillGrid();
+        }
+
+        private void FillGrid() {
+            List<Skill> ls = new SkillsServices().ListSkills();
+            List<ObjectGrid> LG = new List<ObjectGrid>();
+            foreach (var skill in ls) {
+                LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });
+            }
         }
     }
 }
