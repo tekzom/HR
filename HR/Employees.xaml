@@ -10,7 +10,6 @@
 
         <TabControl Name="TabMain"  HorizontalAlignment="Left" Height="650" Margin="10,30,0,0" VerticalAlignment="Top" Width="1070">
             <TabItem Name="Employee" Header="Employee" Visibility="Visible">
-
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
                         <Grid Background="#FFE5E5E5">
