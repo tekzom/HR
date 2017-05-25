@@ -21,6 +21,7 @@ namespace HR
     public partial class Menu : Window
     {
         public Menu() {
+            InitializeComponent();
             MainPanel.Children.Clear();
             var w = new Test();
             MainPanel.Children.Add(w);

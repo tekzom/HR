@@ -38,6 +38,7 @@ namespace HR
             foreach (var skill in ls) {
                 LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });
             }
+            GridTest.ItemsSource = LG;
         }
     }
 }
