@@ -199,6 +199,7 @@ namespace HR
             Education.Visibility = Visibility.Visible;
             Languages.Visibility = Visibility.Visible;
             Certification.Visibility = Visibility.Visible;
+
         }
 
         private void btManageSkill_Click(object sender, RoutedEventArgs e) {
