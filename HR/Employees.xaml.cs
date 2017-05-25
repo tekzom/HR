@@ -186,6 +186,7 @@ namespace HR
             Show(SgridEmployee, SaddEmployee);
         }
 
+
         private void btInfo_Click(object sender, RoutedEventArgs e) {
             Employee ep = ((FrameworkElement)sender).DataContext as Employee;
             gridSkill.ItemsSource = ep.Skills;
@@ -213,6 +214,39 @@ namespace HR
         }
 
         private void btManageLanguages_Click(object sender, RoutedEventArgs e) {
+
+
+        private void UpEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            var employee = ((FrameworkElement)sender).DataContext as Employee;
+            idEmployee = employee.Id;
+            isUpdate = true;
+
+            tfirstname.Text = employee.FirstName;
+            tlastname.Text = employee.LastName;
+            combonat.Text = employee.Nation.ToString();
+            dob.SelectedDate = employee.Datebirth;
+            cbgr.Text = employee.Gender;
+            cbms.Text = employee.MaritalStatus;
+            tcin.Text = employee.CIN;
+            tEstatus.Text = employee.EpmloyeeStatus;
+            combojob.Text = employee.Job.ToString();
+            tadress.AppendText(employee.Adress);
+            tphone.Text = employee.Phone;
+            temail.Text = employee.Email;
+            djoin.SelectedDate = employee.JoinDate;
+            comboDepa.Text = employee.Dep.ToString();
+            comboSuperV.Text = employee.Supervisor.ToString();
+            combostatus.Text = employee.Stat.ToString();
+            comboPay.Text = employee.pay.ToString();
+
+            Show(SaddEmployee,SgridEmployee);
+        }
+
+        private void delEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            var employee = ((FrameworkElement)sender).DataContext as Employee;
+            ES.Delete(employee.Id);
 
         }
     }

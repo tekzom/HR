@@ -35,11 +35,6 @@ namespace HRuwp.Entities
         public virtual List<Certification> Certifications { get; set; }
         public virtual List<Project> Projects { get; set; }
 
-        //public Employee() {
-        //    this.Lproject = new HashSet<Project>().ToList();
-        //}
-
-
         public override string ToString()
         {
             return this.FirstName + " " + this.LastName;
