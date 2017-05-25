@@ -10,7 +10,7 @@
         <TabControl HorizontalAlignment="Left" Height="650" Margin="10,30,0,0" VerticalAlignment="Top" Width="1070">
             <TabItem Header="Employee">
                 <Grid Background="#FFE5E5E5">
-                    <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
+                    <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
                         <Grid Background="#FFE5E5E5">
                             <Button x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="120,78,0,0" VerticalAlignment="Top" Width="86" Click="baddEmployee_Click"/>
                             <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="120,117,0,0" VerticalAlignment="Top" Width="794" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
@@ -43,14 +43,25 @@
                                         </DataGridTemplateColumn.CellTemplate>
 
                                     </DataGridTemplateColumn>
+                                    
+                                    <DataGridTemplateColumn Header="Info">
+                                        <DataGridTemplateColumn.CellTemplate>
 
+                                            <DataTemplate >
+
+                                                <Button x:Name="btInfo" Content="Info" />
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+
+                                    </DataGridTemplateColumn>
 
                                 </DataGrid.Columns>
                             </DataGrid>
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SaddEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
                         <Grid Background="#7FFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" Height="541" Width="880">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="45*"/>

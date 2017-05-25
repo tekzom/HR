@@ -132,13 +132,58 @@ namespace HR
             }
             else
             {
+                ES.Update(
+                    new Employee {
+                        Id=idEmployee,
+                        FirstName = tfirstname.Text,
+                        LastName = tlastname.Text,
+                        Nation = NS.FindExisting((int)combonat.SelectedValue),
+                        Datebirth = dob.SelectedDate.Value.Date,
+                        Gender = cbgr.Text,
+                        MaritalStatus = cbms.Text,
+                        CIN = tcin.Text,
+                        EpmloyeeStatus = tEstatus.Text,
+                        Job = JS.FindExisting((int)combojob.SelectedValue),
+                        Adress = Gets(tadress),
+                        Phone = tphone.Text,
+                        Email = temail.Text,
+                        JoinDate = djoin.SelectedDate.Value.Date,
+                        Dep = DS.FindExisting((int)comboDepa.SelectedValue),
+                        Supervisor = ES.FindExisting((int)comboSuperV.SelectedValue),
+                        Stat = SS.FindExisting((int)combostatus.SelectedValue),
+                        pay = PS.FindExisting((int)comboPay.SelectedValue)
+                    }
+                    );
+                isUpdate = false;
             }
-    
+            ClearInputs();
+
+        }
+
+        private void ClearInputs() {
+            tfirstname.Clear();
+            tlastname.Clear();
+            combonat.SelectedIndex = -1;
+            dob.SelectedDate = DateTime.Now;
+            cbgr.SelectedIndex = -1;
+            cbms.SelectedIndex = -1;
+            tcin.Clear();
+            tEstatus.Clear();
+            combojob.SelectedIndex = -1;
+            tadress.Document.Blocks.Clear();
+            tphone.Clear();
+            temail.Clear();
+            djoin.SelectedDate = DateTime.Now;
+            comboDepa.SelectedIndex = -1;
+            comboSuperV.SelectedIndex = -1;
+            combostatus.SelectedIndex = -1;
+            comboPay.SelectedIndex = -1;
         }
 
         private void bCancelEmployee_Click(object sender, RoutedEventArgs e)
         {
-
+            ClearInputs();
+            Show(SgridEmployee, SaddEmployee);
         }
     }
 }
