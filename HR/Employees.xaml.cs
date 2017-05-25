@@ -215,6 +215,7 @@ namespace HR
 
         private void btManageLanguages_Click(object sender, RoutedEventArgs e) {
 
+        }
 
         private void UpEmployee_Click(object sender, RoutedEventArgs e)
         {
