@@ -24,43 +24,39 @@ namespace HR
     /// </summary>
     /// 
 
-    class ObjectGridView
-    {
-        public string Name { get; set; }
-        public bool isChecked { get; set; }
-    }
+
 
     public partial class Employees : UserControl
     {
         ///////////////////////// Employee de Info //////////////////
-        private Employee _Employee = new Employee();
+        private Employee _Employee { get; set; }
         ////////////////////////  Skill Chekbox /////////////////////
 
 
 
-        private void FillGrid()
-        {
-            List<Skill> lSkills = new SkillsServices().ListSkills();
-            List<Skill> Semployee = _Employee.Skills;
-            List<ObjectGrid> LG = new List<ObjectGrid>();
-            bool verf = false;
-            foreach (var skill in lSkills)
-            {
-                foreach (var eSkill in Semployee)
-                {
-                    if(skill.Id == eSkill.id)
-                    {
-                        verf = true;
-                        break;
-                    }
-                }
-                if(verf)
-                    LG.Add(new ObjectGrid { Name = skill.Name, isChecked = true });
-                else
-                    LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });  
-            }
-            gridMSkill.ItemsSource = LG;
-        }
+        //private void FillGrid()
+        //{
+        //    List<Skill> lSkills = new SkillsServices().ListSkills();
+        //    List<Skill> Semployee = _Employee.Skills;
+        //    List<ObjectGrid> LG = new List<ObjectGrid>();
+        //    bool verf = false;
+        //    foreach (var skill in lSkills)
+        //    {
+        //        foreach (var eSkill in Semployee)
+        //        {
+        //            if(skill.Id == eSkill.Id)
+        //            {
+        //                verf = true;
+        //                break;
+        //            }
+        //        }
+        //        if(verf)
+        //            LG.Add(new ObjectGrid { Name = skill.Name, isChecked = true });
+        //        else
+        //            LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });  
+        //    }
+        //    gridMSkill.ItemsSource = LG;
+        //}
         
 
 
@@ -72,6 +68,7 @@ namespace HR
         EmployeesServices ES = new EmployeesServices();
         List<Status> SL = new List<Status>();
         StatusServices SS = new StatusServices();
+        SkillsServices SkillS = new SkillsServices();
         List<Nationality> NL = new List<Nationality>();
         NationalitiesServices NS = new NationalitiesServices();
         List<Job> JL = new List<Job>();
@@ -229,11 +226,11 @@ namespace HR
 
 
         private void btInfo_Click(object sender, RoutedEventArgs e) {
-            _Employee = ((FrameworkElement)sender).DataContext as Employee;
-            gridSkill.ItemsSource = ep.Skills;
-            gridCer.ItemsSource = ep.Certifications;
-            gridEdu.ItemsSource = ep.Educations;
-            gridLan.ItemsSource = ep.Languages;
+            _Employee  = ((FrameworkElement)sender).DataContext as Employee;
+            gridSkill.ItemsSource = _Employee.Skills;
+            gridCer.ItemsSource = _Employee.Certifications;
+            gridEdu.ItemsSource = _Employee.Educations;
+            gridLan.ItemsSource = _Employee.Languages;
             Employee.Visibility = Visibility.Collapsed;
             TabMain.SelectedIndex = 1;
             Skills.Visibility = Visibility.Visible;
@@ -246,13 +243,29 @@ namespace HR
         private void btManageSkill_Click(object sender, RoutedEventArgs e)
         {
             MSkill.Visibility = Visibility.Visible;
-            List<Skill> ls = new SkillsServices().ListSkills();
+
+            List<Skill> lSkills = new SkillsServices().ListSkills();
+            List<Skill> Semployee = _Employee.Skills;
             List<ObjectGrid> LG = new List<ObjectGrid>();
-            foreach (var skill in ls)
+            bool verf = false;
+            foreach (var skill in lSkills)
             {
-                LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });
+                foreach (var eSkill in Semployee)
+                {
+                    if (skill.Id == eSkill.Id)
+                    {
+                        verf = true;
+                        break;
+                    }
+                }
+                if (verf)
+                    LG.Add(new ObjectGrid {IdO = skill.Id, Name = skill.Name, isChecked = true });
+                else
+                    LG.Add(new ObjectGrid {IdO = skill.Id, Name = skill.Name, isChecked = false });
+                verf = false;
             }
             gridMSkill.ItemsSource = LG;
+            
         }
 
         private void btManageEducation_Click(object sender, RoutedEventArgs e)
@@ -327,7 +340,21 @@ namespace HR
 
         private void SaveSkill_Click(object sender, RoutedEventArgs e)
         {
-            MSkill.Visibility = Visibility.Collapsed;
+            List<Skill> lSkills = new SkillsServices().ListSkills();
+            List<Skill> Semployee = _Employee.Skills;
+            List<ObjectGrid> LG = new List<ObjectGrid>();
+
+            _Employee.Skills.Clear();
+
+            foreach (var item in gridMSkill.Items)
+            {
+
+                var Obj = ((FrameworkElement)item).DataContext as ObjectGrid;
+                if(Obj.isChecked==true)
+                _Employee.Skills.Add(SkillS.FindExisting(Obj.IdO));
+
+            }
+            gridMSkill.ItemsSource = LG;
         }
 
         private void CancelSkill_Click(object sender, RoutedEventArgs e)

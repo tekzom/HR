@@ -22,9 +22,7 @@ namespace HR
     {
         public Menu() {
             InitializeComponent();
-            MainPanel.Children.Clear();
-            var w = new Test();
-            MainPanel.Children.Add(w);
+
         }
 
 
@@ -32,7 +30,6 @@ namespace HR
         {
             MainPanel.Children.Clear();
             var w = new JobDetailsSetup();
-            //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
 
@@ -53,7 +50,6 @@ namespace HR
         {
             MainPanel.Children.Clear();
             var w = new TrainingSetup();
-            //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
 
@@ -62,7 +58,6 @@ namespace HR
         {
             MainPanel.Children.Clear();
             var w = new JobDetailsSetup();
-            //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
 
@@ -70,7 +65,6 @@ namespace HR
         {
             MainPanel.Children.Clear();
             var w = new ProjectsClientSetup();
-            //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
 
@@ -78,7 +72,6 @@ namespace HR
         {
             MainPanel.Children.Clear();
             var w = new QualificationsSetup();
-            //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
 
@@ -91,7 +84,6 @@ namespace HR
         {
             MainPanel.Children.Clear();
             var w = new Employees();
-            //w.IsUpdate = false;
             MainPanel.Children.Add(w);
         }
     }

@@ -14,7 +14,7 @@
                     <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
                         <Grid Background="#FFE5E5E5">
                             <Button x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="120,78,0,0" VerticalAlignment="Top" Width="86" Click="baddEmployee_Click"/>
-                            <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="120,117,0,0" VerticalAlignment="Top" Width="794" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="120,121,0,0" VerticalAlignment="Top" Width="794" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
                                     <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
@@ -121,7 +121,7 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Name="Skills" Header="Skills" >
+            <TabItem Name="Skills" Header="Skills" Visibility="Collapsed">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
                         <Grid>
@@ -140,6 +140,7 @@
                             <Button x:Name="CancelSkill" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" Click="CancelSkill_Click"/>
                             <DataGrid x:Name="gridMSkill" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                     <DataGridTemplateColumn Header="CheckBox">
                                         <DataGridTemplateColumn.CellTemplate>
@@ -155,7 +156,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Name="Education"  Header="Education">
+            <TabItem Name="Education"  Header="Education" Visibility="Collapsed">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridEdu" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
@@ -176,6 +177,7 @@
                             <Button x:Name="CancelEducation" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" />
                             <DataGrid x:Name="gridMEducation" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                     <DataGridTemplateColumn Header="CheckBox">
                                         <DataGridTemplateColumn.CellTemplate>
@@ -190,7 +192,7 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Name="Certification"  Header="Certifications">
+            <TabItem Name="Certification"  Header="Certifications" Visibility="Collapsed">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridCer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
@@ -211,6 +213,7 @@
                             <Button x:Name="CancelCertifica" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" />
                             <DataGrid x:Name="gridMCertifica" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                     <DataGridTemplateColumn Header="CheckBox">
                                         <DataGridTemplateColumn.CellTemplate>
@@ -226,7 +229,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Name="Languages" Header="Languages">
+            <TabItem Name="Languages" Header="Languages" Visibility="Collapsed">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
@@ -247,6 +250,7 @@
                             <Button x:Name="CancelLanguage" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" />
                             <DataGrid x:Name="gridMLanguage" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                     <DataGridTemplateColumn Header="CheckBox">
                                         <DataGridTemplateColumn.CellTemplate>

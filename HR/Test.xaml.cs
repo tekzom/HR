@@ -22,6 +22,7 @@ namespace HR
     /// </summary>
     class ObjectGrid
     {
+        public int IdO { get; set; }
         public string Name { get; set; }
         public bool isChecked { get; set; }
     }
