@@ -22,8 +22,35 @@ namespace HR
     /// <summary>
     /// Interaction logic for Employees.xaml
     /// </summary>
+    /// 
+
+    class ObjectGridView
+    {
+        public string Name { get; set; }
+        public bool isChecked { get; set; }
+    }
+
     public partial class Employees : UserControl
     {
+
+        ////////////////////////  Skill Chekbox /////////////////////
+
+
+
+        private void FillGrid()
+        {
+            List<Skill> ls = new SkillsServices().ListSkills();
+            List<ObjectGrid> LG = new List<ObjectGrid>();
+            foreach (var skill in ls)
+            {
+                LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });
+            }
+            gridMSkill.ItemsSource = LG;
+        }
+        
+
+
+
         bool isUpdate = false;
         int idEmployee;
 
@@ -202,20 +229,52 @@ namespace HR
 
         }
 
-        private void btManageSkill_Click(object sender, RoutedEventArgs e) {
-
+        private void btManageSkill_Click(object sender, RoutedEventArgs e)
+        {
+            MSkill.Visibility = Visibility.Visible;
+            List<Skill> ls = new SkillsServices().ListSkills();
+            List<ObjectGrid> LG = new List<ObjectGrid>();
+            foreach (var skill in ls)
+            {
+                LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });
+            }
+            gridMSkill.ItemsSource = LG;
         }
 
-        private void btManageEducation_Click(object sender, RoutedEventArgs e) {
-
+        private void btManageEducation_Click(object sender, RoutedEventArgs e)
+        {
+            SMEducation.Visibility = Visibility.Visible;
+            List<Education> ls = new EducationServices().ListEducations();
+            List<ObjectGrid> LG = new List<ObjectGrid>();
+            foreach (var education in ls)
+            {
+                LG.Add(new ObjectGrid { Name = education.Name, isChecked = false });
+            }
+            gridMEducation.ItemsSource = LG;
         }
 
-        private void btManageCertification_Click(object sender, RoutedEventArgs e) {
-
+        private void btManageCertification_Click(object sender, RoutedEventArgs e)
+        {
+            SMCertifica.Visibility = Visibility.Visible;
+            List<Certification> ls = new CertificationsServices().ListCertifications();
+            List<ObjectGrid> LG = new List<ObjectGrid>();
+            foreach (var certicica in ls)
+            {
+                LG.Add(new ObjectGrid { Name = certicica.Name, isChecked = false });
+            }
+            gridMCertifica.ItemsSource = LG;
         }
 
-        private void btManageLanguages_Click(object sender, RoutedEventArgs e) {
-
+        private void btManageLanguages_Click(object sender, RoutedEventArgs e)
+        {
+            SMLanguage.Visibility = Visibility.Visible;
+            List<Language> ls = new LanguagesServices().ListLanguages();
+            List<ObjectGrid> LG = new List<ObjectGrid>();
+            foreach (var language in ls)
+            {
+                LG.Add(new ObjectGrid { Name = language.Name, isChecked = false });
+            }
+            gridMCertifica.ItemsSource = LG;
         }
 
         private void UpEmployee_Click(object sender, RoutedEventArgs e)
@@ -250,6 +309,16 @@ namespace HR
             var employee = ((FrameworkElement)sender).DataContext as Employee;
             ES.Delete(employee.Id);
 
+        }
+
+        private void SaveSkill_Click(object sender, RoutedEventArgs e)
+        {
+            MSkill.Visibility = Visibility.Collapsed;
+        }
+
+        private void CancelSkill_Click(object sender, RoutedEventArgs e)
+        {
+            MSkill.Visibility = Visibility.Collapsed;
         }
     }
 }

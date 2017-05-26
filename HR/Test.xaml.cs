@@ -40,5 +40,8 @@ namespace HR
             }
             GridTest.ItemsSource = LG;
         }
+
+
+
     }
 }
