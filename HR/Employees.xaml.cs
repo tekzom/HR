@@ -32,18 +32,32 @@ namespace HR
 
     public partial class Employees : UserControl
     {
-
+        ///////////////////////// Employee de Info //////////////////
+        private Employee _Employee = new Employee();
         ////////////////////////  Skill Chekbox /////////////////////
 
 
 
         private void FillGrid()
         {
-            List<Skill> ls = new SkillsServices().ListSkills();
+            List<Skill> lSkills = new SkillsServices().ListSkills();
+            List<Skill> Semployee = _Employee.Skills;
             List<ObjectGrid> LG = new List<ObjectGrid>();
-            foreach (var skill in ls)
+            bool verf = false;
+            foreach (var skill in lSkills)
             {
-                LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });
+                foreach (var eSkill in Semployee)
+                {
+                    if(skill.Id == eSkill.id)
+                    {
+                        verf = true;
+                        break;
+                    }
+                }
+                if(verf)
+                    LG.Add(new ObjectGrid { Name = skill.Name, isChecked = true });
+                else
+                    LG.Add(new ObjectGrid { Name = skill.Name, isChecked = false });  
             }
             gridMSkill.ItemsSource = LG;
         }
