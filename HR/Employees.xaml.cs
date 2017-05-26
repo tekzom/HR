@@ -229,7 +229,7 @@ namespace HR
 
 
         private void btInfo_Click(object sender, RoutedEventArgs e) {
-            Employee ep = ((FrameworkElement)sender).DataContext as Employee;
+            _Employee = ((FrameworkElement)sender).DataContext as Employee;
             gridSkill.ItemsSource = ep.Skills;
             gridCer.ItemsSource = ep.Certifications;
             gridEdu.ItemsSource = ep.Educations;
