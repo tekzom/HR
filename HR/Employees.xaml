@@ -13,8 +13,17 @@
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
                         <Grid Background="#FFE5E5E5">
-                            <Button x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="120,78,0,0" VerticalAlignment="Top" Width="86" Click="baddEmployee_Click"/>
-                            <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="120,121,0,0" VerticalAlignment="Top" Width="794" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="120,78,0,0" VerticalAlignment="Top" Width="86" Click="baddEmployee_Click" Background="#FF396CC5" RenderTransformOrigin="0.5,0.5" Foreground="White" BorderBrush="#FF396CC5">
+                                <Button.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="1" ScaleX="1"/>
+                                        <SkewTransform AngleY="0" AngleX="0"/>
+                                        <RotateTransform Angle="0"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Button.RenderTransform>
+                            </Button>
+                            <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="120,121,0,0" VerticalAlignment="Top" Width="794" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" Foreground="#FF00BEE8" Background="#FF189981" BorderBrush="White">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
                                     <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
