@@ -7,6 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+<<<<<<< HEAD
+        <ListView Name="myListView">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Margin="0"
+                                          VerticalAlignment="Center"
+                                          IsChecked="{Binding IsChecked}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Margin="0"
+                                           Text="{Binding Name}"
+                                           Loaded="TextBlock_Loaded"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+=======
         <DataGrid Name ="GridTest">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="First Name" Binding="{Binding Name}" />
@@ -22,5 +54,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+>>>>>>> origin/master
     </Grid>
 </UserControl>
