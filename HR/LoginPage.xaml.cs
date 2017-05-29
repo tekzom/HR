@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HR
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for LoginPage.xaml
     /// </summary>
-    public partial class Login : UserControl
+    public partial class LoginPage : Window
     {
-        public Login()
+        public LoginPage()
         {
             InitializeComponent();
-        }
-
-        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void bLogin_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -1,0 +1,27 @@
+﻿<Window x:Class="HR.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HR"
+        mc:Ignorable="d"        
+        Title="Menu" Height="900" Width="1600"
+        WindowStyle="None" ResizeMode="NoResize"  
+    WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="467*"/>
+            <RowDefinition Height="433*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="91*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/Login.png"/>
+        </Grid.Background>
+        <TextBox HorizontalAlignment="Left" Height="40" TextWrapping="Wrap"  VerticalAlignment="Top" Width="292" FontSize="24" Foreground="#FFEEEEEE" Background="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="0,93,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="292" FontSize="24" Foreground="#FFEEEEEE" Background="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="186,154.5,0,0" VerticalAlignment="Top" Width="106" FontSize="24" Foreground="#FF3B3334" BorderBrush="{x:Null}" Height="38" FontFamily="Candara" Grid.Column="1" Grid.Row="1" Background="#FFFAF6E5" UseLayoutRounding="False"/>
+    </Grid>
+</Window>

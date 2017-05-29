@@ -88,8 +88,8 @@
     <Compile Include="LeaveSetting.xaml.cs">
       <DependentUpon>LeaveSetting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managment\CertificationsServices.cs" />
     <Compile Include="Managment\ClientsServices.cs" />
@@ -145,7 +145,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,6 +239,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\DLF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
