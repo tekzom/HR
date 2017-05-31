@@ -130,7 +130,7 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Name="Skills" Header="Skills" Visibility="Collapsed">
+            <TabItem Name="Skills" Header="Skills" Visibility="Collapsed" >
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
                         <Grid>
@@ -154,7 +154,7 @@
                                     <DataGridTemplateColumn Header="CheckBox">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate >
-                                                <CheckBox x:Name="Check" IsChecked="{Binding isChecked}" />
+                                                <CheckBox x:Name="Check" IsChecked="{Binding isChecked}" Checked="Check_Checked" Unchecked="Check_Unchecked" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>

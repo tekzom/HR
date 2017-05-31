@@ -41,7 +41,6 @@ namespace HR.Managment
             return Origin;
         }
 
-
     
 
         public List<Employee> ListEmployees()
