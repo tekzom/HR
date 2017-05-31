@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HR.Managment;
 
 namespace HR
 {
@@ -37,7 +38,7 @@ namespace HR
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(Tuser.Text != "")
+            if (Tuser.Text != "")
                 Luser.Visibility = Visibility.Collapsed;
             else Luser.Visibility = Visibility.Visible;
         }
@@ -53,9 +54,24 @@ namespace HR
 
         private void bLogin_Click(object sender, RoutedEventArgs e)
         {
-            Menu M = new Menu();
-            this.Hide();
-            M.Show();
+            EmployeesServices ES = new EmployeesServices();
+
+            errorPass.Visibility = Visibility.Collapsed;
+
+            errorUser.Visibility = Visibility.Collapsed;
+
+            if (ES.FindUser(Tuser.Text))
+                if (ES.FindPass(Tuser.Text, Tpass.Password))
+                {
+                    Menu M = new Menu();
+                    this.Hide();
+                    M.Show();
+                }
+                else
+                    errorPass.Visibility = Visibility.Visible;
+            else
+                errorUser.Visibility = Visibility.Visible;
+
         }
     }
 }

@@ -10,6 +10,10 @@ namespace HR.Managment
     class CertificationsServices
     {
         Model_HR db = new Model_HR();
+        public CertificationsServices()
+        {
+            db = DataBaseService.DB;
+        }
 
         public bool Add(Certification x)
         {

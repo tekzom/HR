@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Managment\CertificationsServices.cs" />
     <Compile Include="Managment\ClientsServices.cs" />
+    <Compile Include="Managment\DataBaseService.cs" />
     <Compile Include="Managment\EducationServices.cs" />
     <Compile Include="Managment\LanguagesServices.cs" />
     <Compile Include="Managment\PayServices.cs" />

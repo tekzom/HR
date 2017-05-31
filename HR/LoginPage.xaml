@@ -40,9 +40,12 @@
             <ImageBrush ImageSource="Assets/Log.png"/>
         </Grid.Background>
         <TextBox Name="Tuser" BorderBrush="White" BorderThickness="0,0,0,1" Background="Transparent" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap"  VerticalAlignment="Top" Width="262" FontSize="24" Foreground="#FFEEEEEE" SelectionBrush="{x:Null}" Grid.Column="1" Grid.Row="1" TextChanged="TextBox_TextChanged" Margin="0,12,0,0" />
-        <Button Name="bLogin" Content="Login" HorizontalAlignment="Left" Margin="156,89,0,0" VerticalAlignment="Top" Width="106" FontSize="24" Foreground="#FF3B3334" BorderBrush="{x:Null}" Height="38" FontFamily="Candara" Grid.Column="1" Grid.Row="2" Background="#FFFAF6E5" UseLayoutRounding="False"  Click="bLogin_Click"/>
+        <Button Name="bLogin" Content="Login" HorizontalAlignment="Center" Margin="174,92,616,0" VerticalAlignment="Top" Width="88" FontSize="24" Foreground="#FF3B3334" BorderBrush="{x:Null}" Height="35" FontFamily="Candara" Grid.Column="1" Grid.Row="2" Background="#FFFAF6E5" UseLayoutRounding="False"  Click="bLogin_Click"/>
         <Label Name="Luser" Content="UserName" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Background="{x:Null}" Foreground="#7FFFFFFF" Height="40" Margin="0,8,0,0" Width="121" Grid.Row="1" Grid.Column="1"/>
         <Label Name="Lpass" Content="Password" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Background="{x:Null}" Foreground="#7FFFFFFF" Height="40" Margin="0,3,0,0" Grid.Row="2" Width="109"/>
         <PasswordBox Name="Tpass" BorderBrush="White" BorderThickness="0,0,0,1" Background="Transparent" HorizontalAlignment="Left" Height="40" Margin="0,8,0,0"  VerticalAlignment="Top" Width="262" FontSize="24" Foreground="#FFEEEEEE"  SelectionBrush="{x:Null}" Grid.Column="1" Grid.Row="2" PasswordChanged="Tpass_PasswordChanged" />
+        <Label Name="errorPass"  Content="Wrong Password ! " HorizontalAlignment="Left" Margin="160,48,0,0" Grid.Row="2" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFE40E0E" Grid.Column="1" Visibility="Collapsed"/>
+        <Label Name="errorUser" Content="User not found" HorizontalAlignment="Left" Margin="160,48,0,0" Grid.Row="1" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFE40E0E" Grid.Column="1" Grid.RowSpan="2" Visibility="Collapsed"/>
+        <CheckBox Name="SavePassword" Content="Save Password" Grid.Column="1" HorizontalAlignment="Left" Margin="2,107,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="White" Background="{x:Null}" FontSize="16"/>
     </Grid>
 </Window>

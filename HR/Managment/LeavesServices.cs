@@ -10,7 +10,10 @@ namespace HR.Managment
     class LeavesServices
     {
         Model_HR db = new Model_HR();
-
+        public LeavesServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Leaves Le)
         {
             db.Leaves.Add(Le);

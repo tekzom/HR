@@ -11,7 +11,10 @@ namespace HR.Managment
     {
 
         Model_HR db = new Model_HR();
-
+        public LoanServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Loan Lo)
         {
             db.Loans.Add(Lo);

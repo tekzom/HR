@@ -10,7 +10,10 @@ namespace HR.Managment
     public class NationalitiesServices
     {
         Model_HR db = new Model_HR();
-
+        public NationalitiesServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Nationality Nat)
         {
             db.Nationalities.Add(Nat);

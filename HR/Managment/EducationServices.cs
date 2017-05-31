@@ -10,7 +10,10 @@ namespace HR.Managment
     class EducationServices
     {
         Model_HR db = new Model_HR();
-
+        public EducationServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Education x)
         {
             db.Educations.Add(x);

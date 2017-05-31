@@ -10,7 +10,10 @@ namespace HR.Managment
     class JobsServices
     {
         Model_HR db = new Model_HR();
-
+        public JobsServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Job Jb)
         {
             db.Jobs.Add(Jb);

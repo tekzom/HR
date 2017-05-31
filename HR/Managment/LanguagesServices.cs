@@ -10,7 +10,10 @@ namespace HR.Managment
     class LanguagesServices
     {
         Model_HR db = new Model_HR();
-
+        public LanguagesServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Language x)
         {
             db.Languages.Add(x);

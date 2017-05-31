@@ -10,7 +10,10 @@ namespace HR.Managment
     class ClientsServices
     {
         Model_HR db = new Model_HR();
-
+        public ClientsServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Client x)
         {
             db.Clients.Add(x);

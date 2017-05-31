@@ -10,7 +10,10 @@ namespace HR.Managment
     class HolidaysServices
     {
         Model_HR db = new Model_HR();
-
+        public HolidaysServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Holiday Hl)
         {
             db.Holidays.Add(Hl);

@@ -10,7 +10,10 @@ namespace HR.Managment
     class EmployeesServices
     {
         Model_HR db = new Model_HR();
-
+        public EmployeesServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Employee Em)
         {
             db.Employees.Add(Em);
@@ -46,6 +49,22 @@ namespace HR.Managment
         public List<Employee> ListEmployees()
         {
             return db.Employees.ToList();
+        }
+
+        public bool FindUser (string u)
+        {
+            var employee = (from e in db.Employees where (e.FirstName == u) select e).FirstOrDefault();
+            if (employee != null)
+                return true;
+            return false;
+        }
+
+        public bool FindPass(string u, string p)
+        {
+            var employee = (from e in db.Employees where (e.FirstName == u && e.password == p) select e).FirstOrDefault();
+            if (employee != null)
+                return true;
+            return false;
         }
     }
 }

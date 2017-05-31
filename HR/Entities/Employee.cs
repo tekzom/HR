@@ -34,6 +34,7 @@ namespace HRuwp.Entities
         public virtual List<Language> Languages { get; set; }
         public virtual List<Certification> Certifications { get; set; }
         public virtual List<Project> Projects { get; set; }
+        public string password { get; set; }
 
         public override string ToString()
         {

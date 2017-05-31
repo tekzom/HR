@@ -10,7 +10,10 @@ namespace HR.Managment
     class SkillsServices
     {
         Model_HR db = new Model_HR();
-
+        public SkillsServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Skill x)
         {
             db.Skills.Add(x);

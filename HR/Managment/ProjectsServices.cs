@@ -10,6 +10,10 @@ namespace HR.Managment
 {
     class ProjectsServices
     {
+        public ProjectsServices()
+        {
+            db = DataBaseService.DB;
+        }
 
         Model_HR db = new Model_HR();
 

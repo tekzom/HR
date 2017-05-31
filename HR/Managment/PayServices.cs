@@ -10,7 +10,10 @@ namespace HR.Managment
     class PayServices
     {
         Model_HR db = new Model_HR();
-
+        public PayServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(PayGrade PG)
         {
             db.PayGrades.Add(PG);

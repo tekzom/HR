@@ -10,7 +10,10 @@ namespace HR.Managment
     class SuspensionServices
     {
         Model_HR db = new Model_HR();
-
+        public SuspensionServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Suspension Sus)
         {
             db.Suspensions.Add(Sus);

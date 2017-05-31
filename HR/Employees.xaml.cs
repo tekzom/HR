@@ -230,7 +230,8 @@ namespace HR
 
         private void btInfo_Click(object sender, RoutedEventArgs e)
         {
-            _Employee = ((FrameworkElement)sender).DataContext as Employee;
+            var Emp = ((FrameworkElement)sender).DataContext as Employee;
+            _Employee = ES.FindExisting(Emp.Id);
             gridSkill.ItemsSource = _Employee.Skills;
             gridCer.ItemsSource = _Employee.Certifications;
             gridEdu.ItemsSource = _Employee.Educations;
@@ -347,7 +348,7 @@ namespace HR
         {
             gridSkill.ItemsSource = null;
             gridSkill.ItemsSource = _Employee.Skills;
-            ES.Update(_Employee);
+            DataBaseService.SaveChanges();
         }
 
         private void CancelSkill_Click(object sender, RoutedEventArgs e)

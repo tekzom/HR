@@ -10,6 +10,10 @@ namespace HR.Managment
     class DepatementsServices
     {
         Model_HR db = new Model_HR();
+        public DepatementsServices()
+        {
+            db = DataBaseService.DB;
+        }
 
         public bool Add(Departement Dp)
         {

@@ -10,7 +10,10 @@ namespace HR.Managment
     class StatusServices
     {
         Model_HR db = new Model_HR();
-
+        public StatusServices()
+        {
+            db = DataBaseService.DB;
+        }
         public bool Add(Status St)
         {
             db.Statuss.Add(St);
