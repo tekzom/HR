@@ -6,12 +6,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
         xmlns:local="clr-namespace:HR"
         mc:Ignorable="d"
-        Title="Menu" Height="720" Width="1280"
+        Title="Menu" Height="900" Width="1600"
         WindowStyle="None" ResizeMode="NoResize"  
-    WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid Margin="0,0,2,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="180"/>
             <ColumnDefinition Width="1089*"/>
         </Grid.ColumnDefinitions>
         <controls:SideMenu Title="HR" Margin="0" HorizontalAlignment="Left" Width="180">

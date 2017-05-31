@@ -23,5 +23,39 @@ namespace HR
         {
             InitializeComponent();
         }
+
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            var s = value as string;
+            return string.IsNullOrEmpty(s);
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return null;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(Tuser.Text != "")
+                Luser.Visibility = Visibility.Collapsed;
+            else Luser.Visibility = Visibility.Visible;
+        }
+
+
+
+        private void Tpass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (Tpass.Password != "")
+                Lpass.Visibility = Visibility.Collapsed;
+            else Lpass.Visibility = Visibility.Visible;
+        }
+
+        private void bLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Menu M = new Menu();
+            this.Hide();
+            M.Show();
+        }
     }
 }

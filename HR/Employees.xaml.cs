@@ -348,13 +348,12 @@ namespace HR
 
             foreach (var item in gridMSkill.Items)
             {
-
-                var Obj = ((FrameworkElement)item).DataContext as ObjectGrid;
+                var Obj = item as ObjectGrid;
                 if(Obj.isChecked==true)
                 _Employee.Skills.Add(SkillS.FindExisting(Obj.IdO));
 
             }
-            gridMSkill.ItemsSource = LG;
+            gridSkill.ItemsSource = _Employee.Skills;
         }
 
         private void CancelSkill_Click(object sender, RoutedEventArgs e)

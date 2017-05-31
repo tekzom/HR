@@ -6,15 +6,15 @@
              xmlns:local="clr-namespace:HR"
              xmlns:Controls="clr-namespace:SideMenu.Controls;assembly=SideMenu" x:Class="HR.JobDetailsSetup"
              mc:Ignorable="d" 
-             d:DesignHeight="690" d:DesignWidth="1090">
+             d:DesignHeight="900" d:DesignWidth="1600">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="558" Margin="120,87,0,0" VerticalAlignment="Top" Width="914">
+        <TabControl HorizontalAlignment="Left" Height="741" Margin="250,87,0,0" VerticalAlignment="Top" Width="1240" FontSize="16">
             <TabItem Header="Job Titles">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer x:Name="Sgrid" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="Badd" Content="Add New +" HorizontalAlignment="Left" Margin="118,41,0,0" VerticalAlignment="Top" Width="75" Click="Badd_Click"/>
-                            <DataGrid x:Name="dgJobt" HorizontalAlignment="Left" Height="394" Margin="118,80,0,0" VerticalAlignment="Top" Width="687" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" SelectionChanged="dgJobt_SelectionChanged">
+                            <Button x:Name="Badd" Content="Add New +" HorizontalAlignment="Left" Margin="118,71,0,0" VerticalAlignment="Top" Width="122" Click="Badd_Click"/>
+                            <DataGrid x:Name="dgJobt" HorizontalAlignment="Left" Height="468" Margin="118,140,0,0" VerticalAlignment="Top" Width="946" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" SelectionChanged="dgJobt_SelectionChanged">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="ID" Binding="{Binding Code}" Visibility="Collapsed" />
                                     <DataGridTextColumn Header="Code" Binding="{Binding TiteleCode}"/>
@@ -83,9 +83,9 @@
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer x:Name="sgpay" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
-                        <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="887" Height="512">
+                        <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="1234" Height="703">
 
-                            <DataGrid x:Name="dgpay" HorizontalAlignment="Left" Height="289" Margin="175,117,0,0" VerticalAlignment="Top" Width="524" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <DataGrid x:Name="dgpay" HorizontalAlignment="Left" Height="422" Margin="162,178,0,0" VerticalAlignment="Top" Width="935" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                     <DataGridTextColumn Header="Salary (dh)" Binding="{Binding Salary}"/>
@@ -116,7 +116,7 @@
                                     </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <Button x:Name="baddpay" Content="Add New +" HorizontalAlignment="Left" Margin="175,74,0,0" VerticalAlignment="Top" Width="75" Click="baddpay_Click"/>
+                            <Button x:Name="baddpay" Content="Add New +" HorizontalAlignment="Left" Margin="162,116,0,0" VerticalAlignment="Top" Width="112" Click="baddpay_Click"/>
                         </Grid>
                     </ScrollViewer>
                     <ScrollViewer Name="SaddP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
@@ -147,8 +147,8 @@
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridE" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="baddES" Content="Add New +" HorizontalAlignment="Left" Margin="151,52,0,0" VerticalAlignment="Top" Width="86" Click="baddES_Click"/>
-                            <DataGrid x:Name="Sstatu" HorizontalAlignment="Left" Height="394" Margin="151,93,0,0" VerticalAlignment="Top" Width="687" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button x:Name="baddES" Content="Add New +" HorizontalAlignment="Left" Margin="151,72,0,0" VerticalAlignment="Top" Width="101" Click="baddES_Click"/>
+                            <DataGrid x:Name="Sstatu" HorizontalAlignment="Left" Height="502" Margin="151,124,0,0" VerticalAlignment="Top" Width="917" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Id" Binding="{Binding ID}"/>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>

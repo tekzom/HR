@@ -5,15 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HR"
              mc:Ignorable="d" 
-             d:DesignHeight="690" d:DesignWidth="1090">
+             d:DesignHeight="900" d:DesignWidth="1600">
     <Grid>
 
-        <TabControl Name="TabMain"  HorizontalAlignment="Left" Height="650" Margin="10,30,0,0" VerticalAlignment="Top" Width="1070">
+        <TabControl Name="TabMain"  HorizontalAlignment="Left" Height="774" Margin="228,30,0,0" VerticalAlignment="Top" Width="1328" FontSize="20">
             <TabItem Name="Employee" Header="Employee" Visibility="Visible">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
                         <Grid Background="#FFE5E5E5">
-                            <Button x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="120,78,0,0" VerticalAlignment="Top" Width="86" Click="baddEmployee_Click" Background="#FF396CC5" RenderTransformOrigin="0.5,0.5" Foreground="White" BorderBrush="#FF396CC5">
+                            <Button x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="178,122,0,0" VerticalAlignment="Top" Width="125" Click="baddEmployee_Click" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" RenderTransformOrigin="0.5,0.5" Foreground="White" BorderBrush="{x:Null}">
                                 <Button.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform ScaleY="1" ScaleX="1"/>
@@ -23,7 +23,7 @@
                                     </TransformGroup>
                                 </Button.RenderTransform>
                             </Button>
-                            <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="120,121,0,0" VerticalAlignment="Top" Width="794" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" Foreground="#FF00BEE8" Background="#FF189981" BorderBrush="White">
+                            <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="178,173,0,0" VerticalAlignment="Top" Width="1000" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" Foreground="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" BorderBrush="White">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
                                     <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>

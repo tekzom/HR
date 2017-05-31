@@ -8,20 +8,41 @@
         Title="Menu" Height="900" Width="1600"
         WindowStyle="None" ResizeMode="NoResize"  
     WindowStartupLocation="CenterScreen" WindowState="Maximized">
+
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20,0" />
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="467*"/>
-            <RowDefinition Height="433*"/>
+            <RowDefinition Height="374*"/>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="457*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="69*"/>
-            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="361*"/>
+            <ColumnDefinition Width="439*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="Assets/Login.png"/>
+            <ImageBrush ImageSource="Assets/Log.png"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="40" TextWrapping="Wrap"  VerticalAlignment="Top" Width="292" FontSize="24" Foreground="#FFEEEEEE" Background="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="0,93,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="292" FontSize="24" Foreground="#FFEEEEEE" Background="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="1"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="186,154.5,0,0" VerticalAlignment="Top" Width="106" FontSize="24" Foreground="#FF3B3334" BorderBrush="{x:Null}" Height="38" FontFamily="Candara" Grid.Column="1" Grid.Row="1" Background="#FFFAF6E5" UseLayoutRounding="False"/>
+        <TextBox Name="Tuser" BorderBrush="White" BorderThickness="0,0,0,1" Background="Transparent" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap"  VerticalAlignment="Top" Width="262" FontSize="24" Foreground="#FFEEEEEE" SelectionBrush="{x:Null}" Grid.Column="1" Grid.Row="1" TextChanged="TextBox_TextChanged" Margin="0,12,0,0" />
+        <Button Name="bLogin" Content="Login" HorizontalAlignment="Left" Margin="156,89,0,0" VerticalAlignment="Top" Width="106" FontSize="24" Foreground="#FF3B3334" BorderBrush="{x:Null}" Height="38" FontFamily="Candara" Grid.Column="1" Grid.Row="2" Background="#FFFAF6E5" UseLayoutRounding="False"  Click="bLogin_Click"/>
+        <Label Name="Luser" Content="UserName" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Background="{x:Null}" Foreground="#7FFFFFFF" Height="40" Margin="0,8,0,0" Width="121" Grid.Row="1" Grid.Column="1"/>
+        <Label Name="Lpass" Content="Password" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Background="{x:Null}" Foreground="#7FFFFFFF" Height="40" Margin="0,3,0,0" Grid.Row="2" Width="109"/>
+        <PasswordBox Name="Tpass" BorderBrush="White" BorderThickness="0,0,0,1" Background="Transparent" HorizontalAlignment="Left" Height="40" Margin="0,8,0,0"  VerticalAlignment="Top" Width="262" FontSize="24" Foreground="#FFEEEEEE"  SelectionBrush="{x:Null}" Grid.Column="1" Grid.Row="2" PasswordChanged="Tpass_PasswordChanged" />
     </Grid>
 </Window>
