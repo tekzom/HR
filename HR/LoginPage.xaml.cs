@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HR.Managment;
+using HR.Json;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace HR
 {
@@ -20,9 +23,17 @@ namespace HR
     /// </summary>
     public partial class LoginPage : Window
     {
+        Option option = new Option();
         public LoginPage()
         {
             InitializeComponent();
+
+            // deserialize JSON directly from a file
+            using (StreamReader file = File.OpenText(@"Option.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                option = (Option)serializer.Deserialize(file, typeof(Option));
+            }
         }
 
 
@@ -59,18 +70,41 @@ namespace HR
             errorPass.Visibility = Visibility.Collapsed;
 
             errorUser.Visibility = Visibility.Collapsed;
-
-            if (ES.FindUser(Tuser.Text))
-                if (ES.FindPass(Tuser.Text, Tpass.Password))
-                {
-                    Menu M = new Menu();
-                    this.Hide();
-                    M.Show();
-                }
-                else
-                    errorPass.Visibility = Visibility.Visible;
+            if (option.AutoSave && option.username == Tuser.Text)
+            {
+                Menu M = new Menu();
+                this.Hide();
+                M.Show();
+            }
             else
-                errorUser.Visibility = Visibility.Visible;
+            {
+                if (ES.FindUser(Tuser.Text))
+                    if (ES.FindPass(Tuser.Text, Tpass.Password))
+                    {
+                        if ((bool)SavePassword.IsChecked)
+                        {
+                            option.AutoSave = true;
+                            option.username = Tuser.Text;
+                            option.Password = Tpass.Password;
+                        }
+                        Menu M = new Menu();
+                        this.Hide();
+                        M.Show();
+                    }
+                    else
+                        errorPass.Visibility = Visibility.Visible;
+                else
+                    errorUser.Visibility = Visibility.Visible;
+                // serialize JSON directly to a file
+                using (StreamWriter file = File.CreateText(@"Option.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(file, option);
+                }
+            }
+            
+
+            
 
         }
     }

@@ -86,5 +86,12 @@ namespace HR
             var w = new Employees();
             MainPanel.Children.Add(w);
         }
+
+        private void CompanyStructure_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Children.Clear();
+            var w = new UC_CompanyStracture();
+            MainPanel.Children.Add(w);
+        }
     }
 }

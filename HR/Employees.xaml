@@ -6,14 +6,14 @@
              xmlns:local="clr-namespace:HR"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="1600">
-    <Grid>
 
-        <TabControl Name="TabMain"  HorizontalAlignment="Left" Height="774" Margin="228,30,0,0" VerticalAlignment="Top" Width="1328" FontSize="20">
-            <TabItem Name="Employee" Header="Employee" Visibility="Visible">
-                <Grid Background="#FFE5E5E5">
-                    <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Visible" >
-                        <Grid Background="#FFE5E5E5">
-                            <Button x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="178,122,0,0" VerticalAlignment="Top" Width="125" Click="baddEmployee_Click" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" RenderTransformOrigin="0.5,0.5" Foreground="White" BorderBrush="{x:Null}">
+    <Grid>
+        <TabControl Name="TabMain"  HorizontalAlignment="Left" Height="774" Margin="236,68,0,0" VerticalAlignment="Top" Width="1328" FontSize="16" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <TabItem Name="Employee" Header="Employee" Visibility="Visible" BorderBrush="{x:Null}" Background="White" Foreground="#FF111111">
+                <Grid Background="#FF414550">
+                    <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
+                        <Grid Background="#FF414550">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="178,122,0,0" VerticalAlignment="Top" Width="125" Click="baddEmployee_Click" RenderTransformOrigin="0.5,0.5" >
                                 <Button.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform ScaleY="1" ScaleX="1"/>
@@ -23,7 +23,7 @@
                                     </TransformGroup>
                                 </Button.RenderTransform>
                             </Button>
-                            <DataGrid x:Name="gridEmployee" HorizontalAlignment="Left" Height="335" Margin="178,173,0,0" VerticalAlignment="Top" Width="1000" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" Foreground="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" BorderBrush="White">
+                            <DataGrid Background="#FF555A68"  x:Name="gridEmployee" HorizontalAlignment="Left" Height="431" Margin="178,173,0,0" VerticalAlignment="Top" Width="1000" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" Foreground="#FF383838" BorderBrush="{x:Null}">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
                                     <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
@@ -35,7 +35,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="UpEmployee" Content="Update" Click="UpEmployee_Click"/>
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"   x:Name="UpEmployee" Content="Update" Click="UpEmployee_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -47,7 +47,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="delEmployee" Content="Delete" Command="Delete" Click="delEmployee_Click"/>
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="delEmployee" Content="Delete" Command="Delete" Click="delEmployee_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -59,7 +59,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="btInfo" Content="Info" Click="btInfo_Click" />
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="btInfo" Content="Info" Click="btInfo_Click" />
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -71,29 +71,29 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
+                    <ScrollViewer Name="SaddEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                         <Grid Background="#7FFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" Height="541" Width="880">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="45*"/>
-                                <ColumnDefinition Width="114*"/>
-                                <ColumnDefinition Width="308*"/>
-                                <ColumnDefinition Width="99*"/>
-                                <ColumnDefinition Width="384*"/>
+                                <ColumnDefinition Width="42*"/>
+                                <ColumnDefinition Width="125*"/>
+                                <ColumnDefinition Width="273*"/>
+                                <ColumnDefinition Width="123*"/>
+                                <ColumnDefinition Width="317*"/>
                             </Grid.ColumnDefinitions>
                             <Label Content="First Nmae" HorizontalAlignment="Left" Margin="0,68,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="86"/>
                             <Label Content="Last Name" HorizontalAlignment="Left" Margin="0,126,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="85"/>
                             <Label Content="Nationality" HorizontalAlignment="Left" Margin="3,187,0,0" VerticalAlignment="Top" Height="31" Width="87" Grid.Column="1"/>
                             <Label Content="Date of birth" HorizontalAlignment="Left" Margin="0,243,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="100"/>
                             <Label Content="Gender" HorizontalAlignment="Left" Margin="0,293,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="62"/>
-                            <Label Content="Marital Status" HorizontalAlignment="Left" Margin="0,383,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="82"/>
+                            <Label Content="Marital Status" HorizontalAlignment="Left" Margin="0,383,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="115"/>
                             <Label Content="CIN" HorizontalAlignment="Left" Margin="3,337,0,0" VerticalAlignment="Top" Height="31" Width="36" Grid.Column="1"/>
                             <Label Content="Status" HorizontalAlignment="Left" Margin="0,425,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="126" Grid.ColumnSpan="2"/>
                             <Label Content="Employee statu" HorizontalAlignment="Left" Margin="0,68,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="69"/>
                             <Label Content="Adress" HorizontalAlignment="Left" Margin="0,126,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="57"/>
-                            <Label Content="Phone Number" HorizontalAlignment="Left" Margin="0,241,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="117" Grid.ColumnSpan="2"/>
+                            <Label Content="Phone Number" HorizontalAlignment="Left" Margin="0,241,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="117"/>
                             <Label Content="Email" HorizontalAlignment="Left" Margin="0,297,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="48"/>
                             <Label Content="Join Date" HorizontalAlignment="Left" Margin="0,347,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="76"/>
-                            <Label Content="Department" HorizontalAlignment="Left" Margin="0,387,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="95" Grid.ColumnSpan="2"/>
+                            <Label Content="Department" HorizontalAlignment="Left" Margin="0,387,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="95"/>
                             <Label Content="Supervisor" HorizontalAlignment="Left" Margin="0,437,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="84"/>
                             <TextBox Name="tfirstname" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,72,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="232"/>
                             <TextBox Name="tlastname" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="232"/>
@@ -117,12 +117,12 @@
                             <DatePicker Name="djoin" Grid.Column="4" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top" Width="278" Height="29"/>
                             <ComboBox Name="comboDepa"  Grid.Column="4" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
                             <ComboBox Name="comboSuperV" Grid.Column="4" HorizontalAlignment="Left" Margin="10,437,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
-                            <Button Name="bSaveEmployee" Content="Save" Grid.Column="4" HorizontalAlignment="Left" Margin="174,484,0,0" VerticalAlignment="Top" Width="114" Height="20" Click="bSaveEmployee_Click"/>
-                            <Button Name="bCancelEmployee" Content="Cancel" Grid.Column="4" HorizontalAlignment="Left" Margin="10,484,0,0" VerticalAlignment="Top" Width="121" Height="20" Click="bCancelEmployee_Click"/>
-                            <Label Content="Job Title" Grid.Column="3" HorizontalAlignment="Left" Margin="0,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.118,-0.404"/>
-                            <ComboBox Name="combojob" Grid.Column="4" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="278"/>
-                            <Label Content="Pay" Grid.Column="1" HorizontalAlignment="Left" Margin="2,466,0,0" VerticalAlignment="Top"/>
-                            <ComboBox Name="comboPay" Grid.Column="2" HorizontalAlignment="Left" Margin="10,470,0,0" VerticalAlignment="Top" Width="232"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" Name="bSaveEmployee" Content="Save" Grid.Column="4" HorizontalAlignment="Left" Margin="174,484,0,0" VerticalAlignment="Top" Width="114" Height="29" Click="bSaveEmployee_Click"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" Name="bCancelEmployee" Content="Cancel" Grid.Column="4" HorizontalAlignment="Left" Margin="10,484,0,0" VerticalAlignment="Top" Width="121" Height="29" Click="bCancelEmployee_Click"/>
+                            <Label Content="Job Title" Grid.Column="3" HorizontalAlignment="Left" Margin="0,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.118,-0.404" Height="31" Width="69"/>
+                            <ComboBox Name="combojob" Grid.Column="4" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
+                            <Label Content="Pay Grade" Grid.Column="1" HorizontalAlignment="Left" Margin="2,466,0,0" VerticalAlignment="Top" Height="31" Width="83"/>
+                            <ComboBox Name="comboPay" Grid.Column="2" HorizontalAlignment="Left" Margin="10,470,0,0" VerticalAlignment="Top" Width="232" Height="27"/>
 
 
 
@@ -130,12 +130,12 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Name="Skills" Header="Skills" Visibility="Collapsed" >
-                <Grid Background="#FFE5E5E5">
+            <TabItem Name="Skills" Header="Skills"  >
+                <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
                         <Grid>
-                            <Button x:Name="btManageSkill" Content="Manage Skills" HorizontalAlignment="Left" Margin="206,62,0,0" VerticalAlignment="Top" Width="86" Click="btManageSkill_Click"/>
-                            <DataGrid x:Name="gridSkill" HorizontalAlignment="Left" Height="304" Margin="206,118,0,0" VerticalAlignment="Top" Width="628" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="btManageSkill" Content="Manage Skills" HorizontalAlignment="Left" Margin="132,68,0,0" VerticalAlignment="Top" Width="159" Click="btManageSkill_Click"/>
+                            <DataGrid Background="#FF555A68" x:Name="gridSkill" HorizontalAlignment="Left" Height="500" Margin="132,124,0,0" VerticalAlignment="Top" Width="760" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                     <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
@@ -143,21 +143,22 @@
                             </DataGrid>
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="MSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="MSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="SaveSkill" Content="Save Changes" HorizontalAlignment="Left" Margin="23,60,0,0" VerticalAlignment="Top" Width="86" Click="SaveSkill_Click"/>
-                            <Button x:Name="CancelSkill" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" Click="CancelSkill_Click"/>
-                            <DataGrid x:Name="gridMSkill" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveSkill" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="171" Click="SaveSkill_Click" Height="40"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelSkill" Content="Cancel" HorizontalAlignment="Left" Margin="1098,65,0,0" VerticalAlignment="Top" Width="161" Click="CancelSkill_Click" RenderTransformOrigin="1.339,0.613" Height="40"/>
+                            <DataGrid Background="#FF555A68" x:Name="gridMSkill" HorizontalAlignment="Left" Height="500" Margin="917,124,0,0" VerticalAlignment="Top" Width="342" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
-                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                                    <DataGridTemplateColumn Header="CheckBox">
+
+                                    <DataGridTemplateColumn Header="">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate >
                                                 <CheckBox x:Name="Check" IsChecked="{Binding isChecked}" Checked="Check_Checked" Unchecked="Check_Unchecked" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" Visibility="Collapsed" />
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
@@ -165,12 +166,12 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Name="Education"  Header="Education" Visibility="Collapsed">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Name="Education"  Header="Education" >
+                <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridEdu" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="btManageEducation" Content="Manage Educations" HorizontalAlignment="Left" Margin="206,79,0,0" VerticalAlignment="Top" Width="120" Click="btManageEducation_Click"/>
-                            <DataGrid x:Name="gridEdu" HorizontalAlignment="Left" Height="318" Margin="206,118,0,0" VerticalAlignment="Top" Width="630" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="btManageEducation" Content="Manage Educations" HorizontalAlignment="Left" Margin="132,62,0,0" VerticalAlignment="Top" Width="auto" Click="btManageEducation_Click"/>
+                            <DataGrid Background="#FF555A68" x:Name="gridEdu" HorizontalAlignment="Left" Height="500" Margin="132,124,0,0" VerticalAlignment="Top" Width="760" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                     <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
@@ -180,33 +181,33 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SMEducation" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SMEducation" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="SaveEducation" Content="Save Changes" HorizontalAlignment="Left" Margin="23,60,0,0" VerticalAlignment="Top" Width="86"/>
-                            <Button x:Name="CancelEducation" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" />
-                            <DataGrid x:Name="gridMEducation" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveEducation" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="176" Click="SaveEducation_Click"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelEducation" Content="Cancel" HorizontalAlignment="Left" Margin="1093,65,0,0" VerticalAlignment="Top" Width="161"/>
+                            <DataGrid Background="#FF555A68" x:Name="gridMEducation" HorizontalAlignment="Left" Height="500" Margin="917,124,0,0" VerticalAlignment="Top" Width="342" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
-                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                                    <DataGridTemplateColumn Header="CheckBox">
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" Visibility="Collapsed"/>
+                                    <DataGridTemplateColumn Header="">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate >
-                                                <CheckBox x:Name="Check" IsChecked="{Binding isChecked}" />
+                                                <CheckBox x:Name="ECheck" IsChecked="{Binding isChecked}" Checked="ECheck_Checked" Unchecked="ECheck_Unchecked" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Name="Certification"  Header="Certifications" Visibility="Collapsed">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Name="Certification"  Header="Certifications" >
+                <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridCer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="btManageCertification" Content="Manage Certifications" HorizontalAlignment="Left" Margin="206,76,0,0" VerticalAlignment="Top" Width="86" Click="btManageCertification_Click"/>
-                            <DataGrid x:Name="gridCer" HorizontalAlignment="Left" Height="304" Margin="206,118,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="btManageCertification" Content="Manage Certifications" HorizontalAlignment="Left" Margin="132,60,0,0" VerticalAlignment="Top" Width="auto" Click="btManageCertification_Click"/>
+                            <DataGrid Background="#FF555A68" x:Name="gridCer" HorizontalAlignment="Left" Height="500" Margin="132,124,0,0" VerticalAlignment="Top" Width="760" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                     <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
@@ -216,21 +217,21 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SMCertifica" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SMCertifica" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="SaveCertifica" Content="Save Changes" HorizontalAlignment="Left" Margin="23,60,0,0" VerticalAlignment="Top" Width="86" />
-                            <Button x:Name="CancelCertifica" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" />
-                            <DataGrid x:Name="gridMCertifica" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveCertifica" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="176"  Click="SaveCertifica_Click"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelCertifica" Content="Cancel" HorizontalAlignment="Left" Margin="1098,65,0,0" VerticalAlignment="Top" Width="161" />
+                            <DataGrid Background="#FF555A68" x:Name="gridMCertifica" HorizontalAlignment="Left" Height="500" Margin="917,124,0,0" VerticalAlignment="Top" Width="342" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
-                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                                    <DataGridTemplateColumn Header="CheckBox">
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" Visibility="Collapsed"/>
+                                    <DataGridTemplateColumn Header="">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate >
-                                                <CheckBox x:Name="Check" IsChecked="{Binding isChecked}" />
+                                                <CheckBox x:Name="CCheck" IsChecked="{Binding isChecked}" Checked="CCheck_Checked" Unchecked="CCheck_Unchecked" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
@@ -238,12 +239,12 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Name="Languages" Header="Languages" Visibility="Collapsed">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Name="Languages" Header="Languages" >
+                <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="btManageLanguages" Content="Manage Languages" HorizontalAlignment="Left" Margin="206,85,0,0" VerticalAlignment="Top" Width="auto" Padding="5" Click="btManageLanguages_Click"/>
-                            <DataGrid x:Name="gridLan" HorizontalAlignment="Left" Height="304" Margin="206,118,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="btManageLanguages" Content="Manage Languages" HorizontalAlignment="Left" Margin="132,60,0,0" VerticalAlignment="Top" Width="auto" Padding="5" Click="btManageLanguages_Click"/>
+                            <DataGrid Background="#FF555A68" x:Name="gridLan" HorizontalAlignment="Left" Height="500" Margin="132,124,0,0" VerticalAlignment="Top" Width="760" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                     <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
@@ -253,21 +254,21 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SMLanguage" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                    <ScrollViewer Name="SMLanguage" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="SaveLanguage" Content="Save Changes" HorizontalAlignment="Left" Margin="23,60,0,0" VerticalAlignment="Top" Width="86" />
-                            <Button x:Name="CancelLanguage" Content="Cancel" HorizontalAlignment="Left" Margin="114,60,0,0" VerticalAlignment="Top" Width="63" />
-                            <DataGrid x:Name="gridMLanguage" HorizontalAlignment="Left" Height="304" Margin="23,118,0,0" VerticalAlignment="Top" Width="154" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveLanguage" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="176" Click="SaveLanguage_Click" />
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelLanguage" Content="Cancel" HorizontalAlignment="Left" Margin="1098,65,0,0" VerticalAlignment="Top" Width="161" />
+                            <DataGrid Background="#FF555A68" x:Name="gridMLanguage" HorizontalAlignment="Left" Height="500" Margin="917,124,0,0" VerticalAlignment="Top" Width="342" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" />
-                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                                    <DataGridTemplateColumn Header="CheckBox">
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdO}" Visibility="Collapsed"/>
+                                    <DataGridTemplateColumn Header="">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate >
-                                                <CheckBox x:Name="Check" IsChecked="{Binding isChecked}" />
+                                                <CheckBox x:Name="LCheck" IsChecked="{Binding isChecked}" Unchecked="LCheck_Unchecked" Checked="LCheck_Checked" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>

@@ -10,11 +10,11 @@
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="741" Margin="250,87,0,0" VerticalAlignment="Top" Width="1240" FontSize="16">
             <TabItem Header="Job Titles">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FF414550">
                     <ScrollViewer x:Name="Sgrid" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="Badd" Content="Add New +" HorizontalAlignment="Left" Margin="118,71,0,0" VerticalAlignment="Top" Width="122" Click="Badd_Click"/>
-                            <DataGrid x:Name="dgJobt" HorizontalAlignment="Left" Height="468" Margin="118,140,0,0" VerticalAlignment="Top" Width="946" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" SelectionChanged="dgJobt_SelectionChanged">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="Badd" Content="Add New +" HorizontalAlignment="Left" Margin="118,71,0,0" VerticalAlignment="Top" Width="122" Click="Badd_Click"/>
+                            <DataGrid Background="#FF555A68" x:Name="dgJobt" HorizontalAlignment="Left" Height="468" Margin="118,140,0,0" VerticalAlignment="Top" Width="946" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False" SelectionChanged="dgJobt_SelectionChanged">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="ID" Binding="{Binding Code}" Visibility="Collapsed" />
                                     <DataGridTextColumn Header="Code" Binding="{Binding TiteleCode}"/>
@@ -25,7 +25,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bup" Content="Update" Click="bup_Click" />
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="bup" Content="Update" Click="bup_Click" />
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -37,7 +37,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdel" Content="Delete" Command="Delete" Click="bdel_Click"/>
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="bdel" Content="Delete" Command="Delete" Click="bdel_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -63,12 +63,12 @@
                                 <ColumnDefinition Width="127*"/>
                                 <ColumnDefinition Width="484*"/>
                             </Grid.ColumnDefinitions>
-                            <Button x:Name="bcanc" Content="Cancel" HorizontalAlignment="Left" Margin="43,245,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="26" Grid.Row="1" Click="bcanc_Click" />
-                            <Button x:Name="bsave" Content="Save" HorizontalAlignment="Left" Margin="134,245,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="26" Grid.Row="1" Click="bsave_Click"/>
-                            <Label Content="Jobe Title Code" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="92" Grid.Row="1"/>
-                            <Label Content="Job Title" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="92" Grid.Row="1"/>
-                            <Label Content="Description" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="92" Grid.Row="1"/>
-                            <Label Content="Specification" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="92" Grid.Row="1"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="bcanc" Content="Cancel" HorizontalAlignment="Left" Margin="43,245,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="26" Grid.Row="1" Click="bcanc_Click" />
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="bsave" Content="Save" HorizontalAlignment="Left" Margin="134,245,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Height="26" Grid.Row="1" Click="bsave_Click"/>
+                            <Label Content="Jobe Title Code" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Grid.Column="1" Height="auto" Width="auto" Grid.Row="1"/>
+                            <Label Content="Job Title" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Grid.Column="1" Height="auto" Width="auto" Grid.Row="1"/>
+                            <Label Content="Description" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Grid.Column="1" Height="auto" Width="auto" Grid.Row="1"/>
+                            <Label Content="Specification" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Grid.Column="1" Height="auto" Width="auto" Grid.Row="1"/>
                             <TextBox x:Name="tcode" Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="10,11,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="199" Grid.Row="1"/>
                             <TextBox x:Name="tname" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="10,57,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="199" Grid.Row="1"/>
                             <RichTextBox x:Name="tdes" Grid.Column="2" HorizontalAlignment="Left" Height="48" Margin="10,105,0,0"  VerticalAlignment="Top" Width="199" Grid.Row="1"/>
@@ -80,12 +80,12 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Pay Grades" Margin="-2,0,-2,-4">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FF414550">
                     <ScrollViewer x:Name="sgpay" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
-                        <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="1234" Height="703">
+                        <Grid Background="#FF414550" HorizontalAlignment="Right" Width="1234" Height="703">
 
-                            <DataGrid x:Name="dgpay" HorizontalAlignment="Left" Height="422" Margin="162,178,0,0" VerticalAlignment="Top" Width="935" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <DataGrid Background="#FF555A68" x:Name="dgpay" HorizontalAlignment="Left" Height="422" Margin="162,178,0,0" VerticalAlignment="Top" Width="935" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                                     <DataGridTextColumn Header="Salary (dh)" Binding="{Binding Salary}"/>
@@ -96,7 +96,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bupPay" Content="Update" Click="bupPay_Click"/>
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="bupPay" Content="Update" Click="bupPay_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -116,7 +116,7 @@
                                     </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <Button x:Name="baddpay" Content="Add New +" HorizontalAlignment="Left" Margin="162,116,0,0" VerticalAlignment="Top" Width="112" Click="baddpay_Click"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="baddpay" Content="Add New +" HorizontalAlignment="Left" Margin="162,116,0,0" VerticalAlignment="Top" Width="112" Click="baddpay_Click"/>
                         </Grid>
                     </ScrollViewer>
                     <ScrollViewer Name="SaddP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
@@ -134,8 +134,8 @@
                             <Button Name="bsavepay" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,180,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="bsavepay_Click" Height="23"/>
                             <TextBox Name="tnamep" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
                             <TextBox Name="tsalary" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,108,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
-                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
-                            <Label Content="Salary" Grid.Column="1" HorizontalAlignment="Left" Margin="11,108,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="41"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="auto"/>
+                            <Label Content="Salary" Grid.Column="1" HorizontalAlignment="Left" Margin="11,108,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="auto"/>
 
                         </Grid>
                     </ScrollViewer>
@@ -144,11 +144,11 @@
             <TabItem Header="Employment Status">
 
 
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridE" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button x:Name="baddES" Content="Add New +" HorizontalAlignment="Left" Margin="151,72,0,0" VerticalAlignment="Top" Width="101" Click="baddES_Click"/>
-                            <DataGrid x:Name="Sstatu" HorizontalAlignment="Left" Height="502" Margin="151,124,0,0" VerticalAlignment="Top" Width="917" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="baddES" Content="Add New +" HorizontalAlignment="Left" Margin="151,72,0,0" VerticalAlignment="Top" Width="101" Click="baddES_Click"/>
+                            <DataGrid Background="#FF555A68" x:Name="Sstatu" HorizontalAlignment="Left" Height="502" Margin="151,124,0,0" VerticalAlignment="Top" Width="917" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Id" Binding="{Binding ID}"/>
                                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
@@ -160,7 +160,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bupE" Content="Update" Click="bupE_Click"/>
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="bupE" Content="Update" Click="bupE_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -172,7 +172,7 @@
 
                                             <DataTemplate >
 
-                                                <Button x:Name="bdelE" Content="Delete" Click="bdelE_Click"/>
+                                                <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="bdelE" Content="Delete" Click="bdelE_Click"/>
 
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -201,8 +201,8 @@
                             <Button Name="BsaveE" Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="200,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="BsaveE_Click" Height="23"/>
                             <TextBox Name="tnameE" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="35,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
                             <RichTextBox Name="tdesE" Grid.Column="2" HorizontalAlignment="Left" Height="81" Margin="35,91,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239"/>
-                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="42"/>
-                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="70"/>
+                            <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="10,53,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="auto"/>
+                            <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,91,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="auto"/>
 
                         </Grid>
                     </ScrollViewer>

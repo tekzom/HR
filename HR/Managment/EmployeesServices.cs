@@ -10,10 +10,12 @@ namespace HR.Managment
     class EmployeesServices
     {
         Model_HR db = new Model_HR();
+
         public EmployeesServices()
         {
             db = DataBaseService.DB;
         }
+
         public bool Add(Employee Em)
         {
             db.Employees.Add(Em);

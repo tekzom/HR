@@ -70,6 +70,9 @@ namespace HR
         List<Status> SL = new List<Status>();
         StatusServices SS = new StatusServices();
         SkillsServices SkillS = new SkillsServices();
+        EducationServices EduS = new EducationServices();
+        CertificationsServices CS = new CertificationsServices();
+        LanguagesServices LS = new LanguagesServices();
         List<Nationality> NL = new List<Nationality>();
         NationalitiesServices NS = new NationalitiesServices();
         List<Job> JL = new List<Job>();
@@ -117,6 +120,11 @@ namespace HR
             comboSuperV.DisplayMemberPath = "FirstName";
             comboSuperV.SelectedValuePath = "Id";
 
+            ///// combo Paygrid
+            PL = PS.ListPaygrades();
+            comboPay.ItemsSource = PL;
+            comboPay.DisplayMemberPath = "Name";
+            comboPay.SelectedValuePath = "Code";
 
         }
 
@@ -245,6 +253,8 @@ namespace HR
 
         }
 
+         //////////////////// SKill /////////////////////////////
+
         private void btManageSkill_Click(object sender, RoutedEventArgs e)
         {
             IsLoading = true;
@@ -274,41 +284,196 @@ namespace HR
             IsLoading = false;
         }
 
+        private void Check_Checked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMSkill.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var Skill = SkillS.FindExisting(Obj.IdO);
+                _Employee.Skills.Add(Skill);
+            }
+        }
+        
+        private void Check_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMSkill.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var Skill = SkillS.FindExisting(Obj.IdO);
+                _Employee.Skills.Remove(Skill);
+            }
+        }
+
+        private void SaveSkill_Click(object sender, RoutedEventArgs e)
+        {
+            gridSkill.ItemsSource = null;
+            gridSkill.ItemsSource = _Employee.Skills;
+            DataBaseService.SaveChanges();
+        }
+
+        private void CancelSkill_Click(object sender, RoutedEventArgs e)
+        {
+            MSkill.Visibility = Visibility.Collapsed;
+        }
+
+        //////////////////// Education /////////////////////////////
+
         private void btManageEducation_Click(object sender, RoutedEventArgs e)
         {
+            IsLoading = true;
             SMEducation.Visibility = Visibility.Visible;
-            List<Education> ls = new EducationServices().ListEducations();
+
+            List<Education> leducation = new EducationServices().ListEducations();
+            List<Education> Eemployee = _Employee.Educations;
             List<ObjectGrid> LG = new List<ObjectGrid>();
-            foreach (var education in ls)
+            bool verf = false;
+            foreach (var education in leducation)
             {
-                LG.Add(new ObjectGrid { Name = education.Name, isChecked = false });
+                foreach (var eEducation in Eemployee)
+                {
+                    if (education.Id == eEducation.Id)
+                    {
+                        verf = true;
+                        break;
+                    }
+                }
+                if (verf)
+                    LG.Add(new ObjectGrid { IdO = education.Id, Name = education.Name, isChecked = true });
+                else
+                    LG.Add(new ObjectGrid { IdO = education.Id, Name = education.Name, isChecked = false });
+                verf = false;
             }
             gridMEducation.ItemsSource = LG;
+            IsLoading = true;
+
         }
+
+        private void ECheck_Checked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMEducation.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var education = EduS.FindExisting(Obj.IdO);
+                _Employee.Educations.Add(education);
+            }
+        }
+
+        private void ECheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMEducation.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var education = EduS.FindExisting(Obj.IdO);
+                _Employee.Educations.Remove(education);
+            }
+        }
+
+        private void SaveEducation_Click(object sender, RoutedEventArgs e)
+        {
+            gridEdu.ItemsSource = null;
+            gridEdu.ItemsSource = _Employee.Educations;
+            DataBaseService.SaveChanges();
+        }
+
+        //////////////////// Certification /////////////////////////////
 
         private void btManageCertification_Click(object sender, RoutedEventArgs e)
         {
+
             SMCertifica.Visibility = Visibility.Visible;
-            List<Certification> ls = new CertificationsServices().ListCertifications();
+
+            List<Certification> lCertification = new CertificationsServices().ListCertifications();
+            List<Certification> Cemployee = _Employee.Certifications;
             List<ObjectGrid> LG = new List<ObjectGrid>();
-            foreach (var certicica in ls)
+            bool verf = false;
+            foreach (var Certification in lCertification)
             {
-                LG.Add(new ObjectGrid { Name = certicica.Name, isChecked = false });
+                foreach (var eCertification in Cemployee)
+                {
+                    if (Certification.Id == eCertification.Id)
+                    {
+                        verf = true;
+                        break;
+                    }
+                }
+                if (verf)
+                    LG.Add(new ObjectGrid { IdO = Certification.Id, Name = Certification.Name, isChecked = true });
+                else
+                    LG.Add(new ObjectGrid { IdO = Certification.Id, Name = Certification.Name, isChecked = false });
+                verf = false;
             }
             gridMCertifica.ItemsSource = LG;
+
         }
+
+        private void CCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMCertifica.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var certifica = CS.FindExisting(Obj.IdO);
+                _Employee.Certifications.Add(certifica);
+            }
+        }
+
+        private void CCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMCertifica.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var certifica = CS.FindExisting(Obj.IdO);
+                _Employee.Certifications.Remove(certifica);
+            }
+        }
+        //////////////////// Language /////////////////////////////
 
         private void btManageLanguages_Click(object sender, RoutedEventArgs e)
         {
             SMLanguage.Visibility = Visibility.Visible;
-            List<Language> ls = new LanguagesServices().ListLanguages();
+
+            List<Language> lLanguage = new LanguagesServices().ListLanguages();
+            List<Language> Lemployee = _Employee.Languages;
             List<ObjectGrid> LG = new List<ObjectGrid>();
-            foreach (var language in ls)
+            bool verf = false;
+            foreach (var language in lLanguage)
             {
-                LG.Add(new ObjectGrid { Name = language.Name, isChecked = false });
+                foreach (var eLanguage in Lemployee)
+                {
+                    if (language.Id == eLanguage.Id)
+                    {
+                        verf = true;
+                        break;
+                    }
+                }
+                if (verf)
+                    LG.Add(new ObjectGrid { IdO = language.Id, Name = language.Name, isChecked = true });
+                else
+                    LG.Add(new ObjectGrid { IdO = language.Id, Name = language.Name, isChecked = false });
+                verf = false;
             }
-            gridMCertifica.ItemsSource = LG;
+            gridMLanguage.ItemsSource = LG;
         }
+
+        private void LCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMLanguage.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var language = LS.FindExisting(Obj.IdO);
+                _Employee.Languages.Add(language);
+            }
+        }
+
+        private void LCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var Obj = gridMLanguage.CurrentItem as ObjectGrid;
+            if (Obj != null)
+            {
+                var language = LS.FindExisting(Obj.IdO);
+                _Employee.Languages.Remove(language);
+            }
+        }
+
 
         private void UpEmployee_Click(object sender, RoutedEventArgs e)
         {
@@ -343,39 +508,23 @@ namespace HR
             ES.Delete(employee.Id);
 
         }
-
-        private void SaveSkill_Click(object sender, RoutedEventArgs e)
+        
+        private void SaveCertifica_Click(object sender, RoutedEventArgs e)
         {
-            gridSkill.ItemsSource = null;
-            gridSkill.ItemsSource = _Employee.Skills;
+            gridCer.ItemsSource = null;
+            gridCer.ItemsSource = _Employee.Certifications;
             DataBaseService.SaveChanges();
         }
 
-        private void CancelSkill_Click(object sender, RoutedEventArgs e)
+        private void SaveLanguage_Click(object sender, RoutedEventArgs e)
         {
-            MSkill.Visibility = Visibility.Collapsed;
+            gridLan.ItemsSource = null;
+            gridLan.ItemsSource = _Employee.Languages;
+            DataBaseService.SaveChanges();
         }
 
-        private void Check_Checked(object sender, RoutedEventArgs e)
-        {
-            var Obj = gridMSkill.CurrentItem as ObjectGrid;
-            if (Obj != null)
-            {
-                var Skill = SkillS.FindExisting(Obj.IdO);
-                _Employee.Skills.Add(Skill);
-            }
-        }
-        //gridSkill.ItemsSource = _Employee.Skills;
 
 
-        private void Check_Unchecked(object sender, RoutedEventArgs e)
-        {
-            var Obj = gridMSkill.CurrentItem as ObjectGrid;
-            if (Obj != null)
-            {
-                var Skill = SkillS.FindExisting(Obj.IdO);
-                _Employee.Skills.Remove(Skill);
-            }
-        }
+
     }
 }
