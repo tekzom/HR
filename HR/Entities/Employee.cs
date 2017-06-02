@@ -36,6 +36,8 @@ namespace HRuwp.Entities
         public virtual List<Project> Projects { get; set; }
         public string password { get; set; }
 
+
+
         public override string ToString()
         {
             return this.FirstName + " " + this.LastName;

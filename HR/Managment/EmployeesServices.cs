@@ -55,7 +55,7 @@ namespace HR.Managment
 
         public bool FindUser (string u)
         {
-            var employee = (from e in db.Employees where (e.FirstName == u) select e).FirstOrDefault();
+            var employee = (from e in db.Employees where (e.Email == u) select e).FirstOrDefault();
             if (employee != null)
                 return true;
             return false;
@@ -63,7 +63,7 @@ namespace HR.Managment
 
         public bool FindPass(string u, string p)
         {
-            var employee = (from e in db.Employees where (e.FirstName == u && e.password == p) select e).FirstOrDefault();
+            var employee = (from e in db.Employees where (e.Email == u && e.password == p) select e).FirstOrDefault();
             if (employee != null)
                 return true;
             return false;

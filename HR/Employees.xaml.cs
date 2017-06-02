@@ -163,7 +163,6 @@ namespace HR
                        Gender = cbgr.Text,
                        MaritalStatus = cbms.Text,
                        CIN = tcin.Text,
-                       EpmloyeeStatus = tEstatus.Text,
                        Job = JS.FindExisting((int)combojob.SelectedValue),
                        Adress = Gets(tadress),
                        Phone = tphone.Text,
@@ -190,7 +189,6 @@ namespace HR
                         Gender = cbgr.Text,
                         MaritalStatus = cbms.Text,
                         CIN = tcin.Text,
-                        EpmloyeeStatus = tEstatus.Text,
                         Job = JS.FindExisting((int)combojob.SelectedValue),
                         Adress = Gets(tadress),
                         Phone = tphone.Text,
@@ -217,7 +215,6 @@ namespace HR
             cbgr.SelectedIndex = -1;
             cbms.SelectedIndex = -1;
             tcin.Clear();
-            tEstatus.Clear();
             combojob.SelectedIndex = -1;
             tadress.Document.Blocks.Clear();
             tphone.Clear();
@@ -301,6 +298,7 @@ namespace HR
             {
                 var Skill = SkillS.FindExisting(Obj.IdO);
                 _Employee.Skills.Remove(Skill);
+                
             }
         }
 
@@ -488,7 +486,6 @@ namespace HR
             cbgr.Text = employee.Gender;
             cbms.Text = employee.MaritalStatus;
             tcin.Text = employee.CIN;
-            tEstatus.Text = employee.EpmloyeeStatus;
             combojob.Text = employee.Job.ToString();
             tadress.AppendText(employee.Adress);
             tphone.Text = employee.Phone;

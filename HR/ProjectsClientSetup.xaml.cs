@@ -50,20 +50,29 @@ namespace HR
             //GridView
             PL = PS.ListProjects();
             gridProj.ItemsSource = PL;
+
             //Combo Client
+            CL = CS.ListClients();
             comboClie.ItemsSource = CL;
             comboClie.DisplayMemberPath = "Name";
             comboClie.SelectedValuePath = "Id";
 
-            ////////////////// Employee Project ///////////////////////////
-                   // Combo Project
-            //comboEPProject.ItemsSource = PL;
-            //comboEPProject.DisplayMemberPath = "Name";
-            //comboEPProject.SelectedValuePath = "Id";
-                   // Combo Employee
-            //ComboEPEmployee.ItemsSource = EL;
-            //ComboEPEmployee.DisplayMemberPath = "FirstName";
-            //ComboEPEmployee.SelectedValuePath = "Id";
+            // Combo Employee 
+            EL = ES.ListEmployees();
+            ComboEPEmployee.ItemsSource = EL;
+            comboClie.DisplayMemberPath = "FirstName";
+            comboClie.SelectedValuePath = "Id";
+
+            PL = PS.ListProjects();
+            comboEPProject.ItemsSource = PL;
+            comboEPProject.DisplayMemberPath = "Name";
+            comboEPProject.SelectedValuePath = "Id";
+
+            
+
+
+
+
         }
 
         string Gets(RichTextBox rtb)
@@ -85,6 +94,11 @@ namespace HR
         private void baddProj_Click(object sender, RoutedEventArgs e)
         {
             Show(SaddProj, SgridProj);
+
+            CL = CS.ListClients();
+            comboClie.ItemsSource = CL;
+            comboClie.DisplayMemberPath = "Name";
+            comboClie.SelectedValuePath = "Id";
         }
 
         private void baddEP_Click(object sender, RoutedEventArgs e)
@@ -99,7 +113,37 @@ namespace HR
 
         private void BsaveEP_Click(object sender, RoutedEventArgs e)
         {
+            if (!isUpdate)
+            {
+                PS.Add(
+                   new Project
+                   {
+                       Name = tnamePro.Text,
+                       Clie = CS.FindExisting((int)comboClie.SelectedValue),
+                       Details = Gets(tdetPro),
+                       Status = ComboStatu.Text
+                   }
+               );
 
+            }
+            else
+            {
+                PS.Update(new Project
+                {
+                    Id = proid,
+                    Name = tnamePro.Text,
+                    Clie = CS.FindExisting((int)comboClie.SelectedValue),
+                    Details = Gets(tdetPro),
+                    Status = ComboStatu.Text
+                });
+                isUpdate = false;
+            }
+            tdetPro.Document.Blocks.Clear();
+            PL.Clear();
+            PL = PS.ListProjects();
+            gridProj.ItemsSource = PL;
+
+            Show(SgridProj, SaddProj);
         }
 
         private void bcancelPro_Click(object sender, RoutedEventArgs e)

@@ -11,7 +11,7 @@
         <TabControl Name="TabMain"  HorizontalAlignment="Left" Height="774" Margin="236,68,0,0" VerticalAlignment="Top" Width="1328" FontSize="16" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
             <TabItem Name="Employee" Header="Employee" Visibility="Visible" BorderBrush="{x:Null}" Background="White" Foreground="#FF111111">
                 <Grid Background="#FF414550">
-                    <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
+                    <ScrollViewer Name="SgridEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid Background="#FF414550">
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="baddEmployee" Content="Add New +" HorizontalAlignment="Left" Margin="178,122,0,0" VerticalAlignment="Top" Width="125" Click="baddEmployee_Click" RenderTransformOrigin="0.5,0.5" >
                                 <Button.RenderTransform>
@@ -71,7 +71,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer Name="SaddEmployee" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid Background="#7FFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" Height="541" Width="880">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="42*"/>
@@ -88,13 +88,12 @@
                             <Label Content="Marital Status" HorizontalAlignment="Left" Margin="0,383,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="115"/>
                             <Label Content="CIN" HorizontalAlignment="Left" Margin="3,337,0,0" VerticalAlignment="Top" Height="31" Width="36" Grid.Column="1"/>
                             <Label Content="Status" HorizontalAlignment="Left" Margin="0,425,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="126" Grid.ColumnSpan="2"/>
-                            <Label Content="Employee statu" HorizontalAlignment="Left" Margin="0,68,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="69"/>
-                            <Label Content="Adress" HorizontalAlignment="Left" Margin="0,126,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="57"/>
-                            <Label Content="Phone Number" HorizontalAlignment="Left" Margin="0,241,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="117"/>
-                            <Label Content="Email" HorizontalAlignment="Left" Margin="0,297,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="48"/>
-                            <Label Content="Join Date" HorizontalAlignment="Left" Margin="0,347,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="76"/>
-                            <Label Content="Department" HorizontalAlignment="Left" Margin="0,387,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="95"/>
-                            <Label Content="Supervisor" HorizontalAlignment="Left" Margin="0,437,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="84"/>
+                            <Label Content="Adress" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="57"/>
+                            <Label Content="Phone Number" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="117"/>
+                            <Label Content="Email" HorizontalAlignment="Left" Margin="0,284,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="48"/>
+                            <Label Content="Join Date" HorizontalAlignment="Left" Margin="0,337,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="76"/>
+                            <Label Content="Department" HorizontalAlignment="Left" Margin="0,383,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="95"/>
+                            <Label Content="Supervisor" HorizontalAlignment="Left" Margin="0,429,0,0" VerticalAlignment="Top" Grid.Column="3" Height="31" Width="84"/>
                             <TextBox Name="tfirstname" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,72,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="232"/>
                             <TextBox Name="tlastname" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="232"/>
                             <ComboBox Name="combonat" Grid.Column="2" HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" Width="232" Height="27"/>
@@ -110,19 +109,18 @@
                             </ComboBox>
                             <TextBox Name="tcin" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,345,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="232"/>
                             <ComboBox Name="combostatus" Grid.Column="2" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top" Width="232" Height="27"/>
-                            <TextBox Name="tEstatus" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="10,72,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="278"/>
-                            <RichTextBox Name="tadress" Grid.Column="4" HorizontalAlignment="Left" Height="56" Margin="10,126,0,0" VerticalAlignment="Top" Width="278"/>
-                            <TextBox Name="tphone" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="10,245,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="278"/>
-                            <TextBox Name="temail" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="10,301,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="278"/>
-                            <DatePicker Name="djoin" Grid.Column="4" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top" Width="278" Height="29"/>
-                            <ComboBox Name="comboDepa"  Grid.Column="4" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
-                            <ComboBox Name="comboSuperV" Grid.Column="4" HorizontalAlignment="Left" Margin="10,437,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
-                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" Name="bSaveEmployee" Content="Save" Grid.Column="4" HorizontalAlignment="Left" Margin="174,484,0,0" VerticalAlignment="Top" Width="114" Height="29" Click="bSaveEmployee_Click"/>
-                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" Name="bCancelEmployee" Content="Cancel" Grid.Column="4" HorizontalAlignment="Left" Margin="10,484,0,0" VerticalAlignment="Top" Width="121" Height="29" Click="bCancelEmployee_Click"/>
-                            <Label Content="Job Title" Grid.Column="3" HorizontalAlignment="Left" Margin="0,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.118,-0.404" Height="31" Width="69"/>
-                            <ComboBox Name="combojob" Grid.Column="4" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
-                            <Label Content="Pay Grade" Grid.Column="1" HorizontalAlignment="Left" Margin="2,466,0,0" VerticalAlignment="Top" Height="31" Width="83"/>
-                            <ComboBox Name="comboPay" Grid.Column="2" HorizontalAlignment="Left" Margin="10,470,0,0" VerticalAlignment="Top" Width="232" Height="27"/>
+                            <RichTextBox Name="tadress" Grid.Column="4" HorizontalAlignment="Left" Height="77" Margin="10,72,0,0" VerticalAlignment="Top" Width="278"/>
+                            <TextBox Name="tphone" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="10,226,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="278"/>
+                            <TextBox Name="temail" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="10,284,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="278"/>
+                            <DatePicker Name="djoin" Grid.Column="4" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="278" Height="29"/>
+                            <ComboBox Name="comboDepa"  Grid.Column="4" HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
+                            <ComboBox Name="comboSuperV" Grid.Column="4" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" Name="bSaveEmployee" Content="Save" Grid.Column="4" HorizontalAlignment="Left" Margin="152,484,0,0" VerticalAlignment="Top" Width="136" Height="29" Click="bSaveEmployee_Click"/>
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" Name="bCancelEmployee" Content="Cancel" Grid.Column="4" HorizontalAlignment="Left" Margin="10,484,0,0" VerticalAlignment="Top" Width="137" Height="29" Click="bCancelEmployee_Click"/>
+                            <Label Content="Job Title" Grid.Column="3" HorizontalAlignment="Left" Margin="0,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.118,-0.404" Height="31" Width="69"/>
+                            <ComboBox Name="combojob" Grid.Column="4" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="278" Height="27"/>
+                            <Label Content="Pay Grade" Grid.Column="1" HorizontalAlignment="Left" Margin="0,484,0,0" VerticalAlignment="Top" Height="31" Width="83"/>
+                            <ComboBox Name="comboPay" Grid.Column="2" HorizontalAlignment="Left" Margin="10,484,0,0" VerticalAlignment="Top" Width="232" Height="27"/>
 
 
 
@@ -130,7 +128,7 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Name="Skills" Header="Skills"  >
+            <TabItem Name="Skills" Header="Skills"  Visibility="Collapsed">
                 <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
                         <Grid>
@@ -143,7 +141,7 @@
                             </DataGrid>
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="MSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="MSkill" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveSkill" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="171" Click="SaveSkill_Click" Height="40"/>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelSkill" Content="Cancel" HorizontalAlignment="Left" Margin="1098,65,0,0" VerticalAlignment="Top" Width="161" Click="CancelSkill_Click" RenderTransformOrigin="1.339,0.613" Height="40"/>
@@ -166,9 +164,9 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Name="Education"  Header="Education" >
+            <TabItem Name="Education"  Header="Education"  Visibility="Collapsed">
                 <Grid Background="#FF414550">
-                    <ScrollViewer Name="SgridEdu" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SgridEdu" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
                         <Grid>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="btManageEducation" Content="Manage Educations" HorizontalAlignment="Left" Margin="132,62,0,0" VerticalAlignment="Top" Width="auto" Click="btManageEducation_Click"/>
                             <DataGrid Background="#FF555A68" x:Name="gridEdu" HorizontalAlignment="Left" Height="500" Margin="132,124,0,0" VerticalAlignment="Top" Width="760" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
@@ -181,7 +179,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SMEducation" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SMEducation" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveEducation" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="176" Click="SaveEducation_Click"/>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelEducation" Content="Cancel" HorizontalAlignment="Left" Margin="1093,65,0,0" VerticalAlignment="Top" Width="161"/>
@@ -202,7 +200,7 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Name="Certification"  Header="Certifications" >
+            <TabItem Name="Certification"  Header="Certifications"  Visibility="Collapsed">
                 <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridCer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
@@ -217,7 +215,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SMCertifica" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SMCertifica" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveCertifica" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="176"  Click="SaveCertifica_Click"/>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelCertifica" Content="Cancel" HorizontalAlignment="Left" Margin="1098,65,0,0" VerticalAlignment="Top" Width="161" />
@@ -239,7 +237,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Name="Languages" Header="Languages" >
+            <TabItem Name="Languages" Header="Languages"  Visibility="Collapsed">
                 <Grid Background="#FF414550">
                     <ScrollViewer Name="SgridLan" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
@@ -254,7 +252,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SMLanguage" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+                    <ScrollViewer Name="SMLanguage" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="SaveLanguage" Content="Save Changes" HorizontalAlignment="Left" Margin="917,65,0,0" VerticalAlignment="Top" Width="176" Click="SaveLanguage_Click" />
                             <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1"  x:Name="CancelLanguage" Content="Cancel" HorizontalAlignment="Left" Margin="1098,65,0,0" VerticalAlignment="Top" Width="161" />

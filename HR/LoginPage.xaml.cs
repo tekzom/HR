@@ -58,6 +58,8 @@ namespace HR
 
         private void Tpass_PasswordChanged(object sender, RoutedEventArgs e)
         {
+            
+
             if (Tpass.Password != "")
                 Lpass.Visibility = Visibility.Collapsed;
             else Lpass.Visibility = Visibility.Visible;
@@ -68,8 +70,8 @@ namespace HR
             EmployeesServices ES = new EmployeesServices();
 
             errorPass.Visibility = Visibility.Collapsed;
-
             errorUser.Visibility = Visibility.Collapsed;
+
             if (option.AutoSave && option.username == Tuser.Text)
             {
                 Menu M = new Menu();
@@ -95,7 +97,7 @@ namespace HR
                         errorPass.Visibility = Visibility.Visible;
                 else
                     errorUser.Visibility = Visibility.Visible;
-                // serialize JSON directly to a file
+
                 using (StreamWriter file = File.CreateText(@"Option.json"))
                 {
                     JsonSerializer serializer = new JsonSerializer();
@@ -105,6 +107,11 @@ namespace HR
             
 
             
+
+        }
+
+        private void Tpass_KeyDown(object sender, KeyEventArgs e)
+        {
 
         }
     }

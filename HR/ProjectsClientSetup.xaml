@@ -168,10 +168,10 @@
 
             <TabItem Header="Employee Projects">
                 <Grid Background="#FF414550">
-                    <ScrollViewer Name="SgridEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" >
+                    <ScrollViewer Name="SgridEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
                         <Grid>
-                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="baddEP" Content="Add New +" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="86" Click="baddEP_Click"/>
-                            <DataGrid Background="#FF555A68" x:Name="gridEP" HorizontalAlignment="Left" Height="304" Margin="120,99,0,0" VerticalAlignment="Top" Width="639" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
+                            <Button Foreground="White" BorderBrush="{x:Null}" Background="#FF0072D1" x:Name="baddEP" Content="Add New +" HorizontalAlignment="Left" Margin="254,68,0,0" VerticalAlignment="Top" Width="86" Click="baddEP_Click"/>
+                            <DataGrid Background="#FF555A68" x:Name="gridEP" HorizontalAlignment="Left" Height="380" Margin="254,121,0,0" VerticalAlignment="Top" Width="837" AutoGenerateColumns="False" DataContext="{Binding}" CanUserAddRows="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Employee" Binding="{Binding Empl}"/>
                                     <DataGridTextColumn Header="Project" Binding="{Binding Proj}"/>
@@ -206,7 +206,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <ScrollViewer Name="SaddEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
+                    <ScrollViewer Name="SaddEP" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Visibility="Collapsed">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="154*"/>
